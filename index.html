@@ -1,0 +1,1061 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Il viaggio a Istanbul di Giovanni e Valentina, 15–21 marzo 2027.">
+<title>Istanbul in due</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: un viaggio a pagine, una schermata alla volta come le storie di un telefono.
+   Poster pop delle piastrelle di Iznik; grammatica Appress OS DS v1.1 (flusso, hairline,
+   superfici solo dove servono, progressive disclosure). Mobile first, iPhone. */
+:root{
+  --paper:#fff3dc;--ink:#16123a;--iznik:#2338d6;--tulip:#ff4a2f;
+  --saffron:#ffc626;--pistachio:#8fdc8a;--rose:#ff9fd0;--white:#ffffff;--ok:#1f7a3a;--warn:#8a1f12;
+  --display:"Bagel Fat One","Arial Black",Impact,sans-serif;
+  --body:"Figtree","Avenir Next","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;
+  --r-control:8px;--r-soft:14px;--r-organic:22px;--r-full:999px;
+  --pop:5px 5px 0 var(--ink);
+  --hair:rgba(22,18,58,.16);--hair-dark:rgba(255,243,220,.22);
+  --gut-l:max(18px,env(safe-area-inset-left,0px));--gut-r:max(18px,env(safe-area-inset-right,0px));
+  --bar-h:56px;
+  color-scheme:light;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--ink);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;overflow-x:hidden}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;touch-action:manipulation}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:.95;margin:0;text-wrap:balance}
+p{margin:0}
+.ttl:focus{outline:none}
+:focus-visible{outline:3px solid var(--tulip);outline-offset:3px;border-radius:var(--r-control)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.soft{opacity:.78;font-size:15px}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- BARRA ---------- */
+.bar{position:fixed;top:0;left:0;right:0;z-index:30;background:var(--ink);color:var(--paper);padding-top:env(safe-area-inset-top,0px);padding-left:var(--gut-l);padding-right:var(--gut-r)}
+.bar[hidden]{display:none}
+.bar .in{height:var(--bar-h);display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:var(--s3);max-width:760px;margin:0 auto}
+.back{width:44px;height:44px;border-radius:50%;border:2px solid var(--paper);background:transparent;color:var(--paper);display:grid;place-items:center;cursor:pointer;font-size:20px;font-weight:800}
+.bar .lab{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .cnt{font-family:var(--mono);font-size:12px;font-weight:700}
+.bar .prog{height:4px;background:rgba(255,243,220,.18);margin:0 calc(var(--gut-r) * -1) 0 calc(var(--gut-l) * -1)}
+.bar .prog i{display:block;height:100%;width:0;background:var(--saffron);transition:width .45s cubic-bezier(.2,1.2,.4,1)}
+
+/* ---------- PAGINE ---------- */
+.page{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding-left:var(--gut-l);padding-right:var(--gut-r);padding-top:calc(env(safe-area-inset-top,0px) + var(--bar-h) + 28px);padding-bottom:max(28px,env(safe-area-inset-bottom,0px))}
+.page[hidden]{display:none!important}
+.page .col{width:100%;max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:var(--s5);flex:1}
+.page.center .col{justify-content:center}
+.foot{margin-top:auto;padding-top:var(--s5);display:flex;flex-direction:column;gap:var(--s3);align-items:stretch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:56px;padding:0 var(--s6);border:3px solid var(--ink);border-radius:var(--r-full);background:var(--saffron);color:var(--ink);font-family:var(--display);font-size:24px;cursor:pointer;box-shadow:var(--pop);transition:transform .12s,box-shadow .12s;text-decoration:none}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn.quiet{background:transparent;box-shadow:none;font-family:var(--body);font-weight:800;font-size:16px;min-height:48px;padding:0 var(--s5);border-width:2px}
+.btn.wide{width:100%}
+.t-blue{background:var(--iznik);color:var(--paper)}
+.t-rose{background:var(--rose)}
+.t-green{background:var(--pistachio)}
+.t-saffron{background:var(--saffron)}
+.t-paper{background:var(--paper)}
+.t-ink{background:var(--ink);color:var(--paper)}
+.t-ink .btn.quiet{color:var(--paper);border-color:var(--paper)}
+.mid{font-size:clamp(34px,9vw,64px)}
+.lede{font-size:clamp(18px,4.6vw,21px);max-width:38ch}
+
+/* splash centrata */
+.splash{background:var(--iznik);color:var(--paper);position:relative;overflow:hidden;padding-top:max(28px,env(safe-area-inset-top,0px))}
+.splash .tiles{position:absolute;inset:0;width:100%;height:100%;opacity:.17;pointer-events:none}
+.splash .col{position:relative;justify-content:center;align-items:center;text-align:center;gap:var(--s5)}
+.splash h1{font-size:clamp(64px,20vw,200px);line-height:.85;display:flex;flex-wrap:nowrap;justify-content:center}
+.splash .col{max-width:1200px}
+.splash h1 .ch{display:inline-block}
+.splash h1 .ch:nth-child(odd){color:var(--saffron)}.splash h1 .ch:nth-child(even){color:var(--rose)}
+.splash .who{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.14em}
+.splash .when{font-family:var(--display);font-size:clamp(20px,5.4vw,30px)}
+.bye{font-size:clamp(54px,14vw,120px);color:var(--saffron);line-height:.9}
+.thanks .col{gap:var(--s4)}
+.enter{font-size:30px;min-height:72px;width:100%;max-width:380px;margin-top:var(--s4)}
+.wobble{animation:wob 2.6s ease-in-out infinite}
+@keyframes wob{0%,100%{transform:rotate(-1.5deg)}50%{transform:rotate(1.5deg) scale(1.03)}}
+
+/* benvenuto */
+.names{font-family:var(--display);font-size:clamp(40px,11vw,80px);line-height:.95}
+.names em{font-style:normal;color:var(--tulip)}
+.ticket{display:grid;grid-template-columns:minmax(0,1fr) 56px;overflow:hidden;background:var(--white);border:3px solid var(--ink);border-radius:var(--r-organic);box-shadow:var(--pop)}
+.ticket .legs{padding:var(--s3) var(--s4)}
+.leg{display:grid;grid-template-columns:auto minmax(24px,1fr) auto;align-items:center;gap:var(--s3);padding-block:var(--s3)}
+.leg+.leg{border-top:2px dashed var(--hair)}
+.leg .city{font-family:var(--display);font-size:clamp(30px,8vw,46px);line-height:1}
+.leg .city small{display:block;font-family:var(--mono);font-size:11px;font-weight:700;margin-top:4px}
+.leg .city.r{text-align:right}
+.leg .md{text-align:center;font-family:var(--mono);font-size:11px;font-weight:700}
+.leg .md i{display:block;height:3px;margin:6px 0;background:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 14px)}
+.ticket .stub{background:var(--tulip);color:var(--ink);border-left:3px dashed var(--ink);display:grid;place-items:center;writing-mode:vertical-rl;font-family:var(--mono);font-weight:700;letter-spacing:.16em;font-size:11px}
+.facts{display:flex;flex-wrap:wrap;gap:var(--s2) 0;font-family:var(--display);font-size:clamp(18px,4.8vw,24px)}
+.facts span{display:inline-flex;align-items:center}
+.facts span+span::before{content:"";width:10px;height:10px;background:var(--tulip);transform:rotate(45deg);margin:0 var(--s3)}
+
+/* copertina */
+.cover .num-big{font-family:var(--display);font-size:clamp(120px,40vw,240px);line-height:.8}
+.cover h2{font-size:clamp(54px,15vw,110px)}
+.cover .w,.qwrap .w{display:inline-block}
+
+/* domanda */
+.qwrap{display:flex;flex-direction:column;gap:var(--s4)}
+.qwrap h2{font-size:clamp(36px,10vw,62px)}
+.opts{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s3)}
+.opt{display:flex;flex-direction:column;gap:4px;text-align:left;min-height:84px;padding:var(--s4) var(--s5);border:3px solid var(--ink);border-radius:var(--r-organic);background:var(--paper);color:var(--ink);cursor:pointer;transition:transform .12s,background .2s}
+.opt b{font-family:var(--display);font-weight:400;font-size:clamp(22px,6vw,28px);line-height:1.05}
+.opt span{font-size:15px;opacity:.82}
+.opt[aria-pressed="true"]{background:var(--ink);color:var(--paper);box-shadow:var(--pop)}
+.opt:active{transform:scale(.98)}
+.chips{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.chip{min-height:52px;padding:0 var(--s5);border:3px solid var(--ink);border-radius:var(--r-full);background:var(--paper);color:var(--ink);font-weight:800;font-size:16px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+/* hotel */
+.duel-note{font-weight:700;background:var(--white);border:3px solid var(--ink);border-radius:var(--r-soft);padding:var(--s3) var(--s4)}
+.verdict{font-family:var(--display);font-size:clamp(64px,18vw,140px);line-height:.85}
+.why p{display:grid;grid-template-columns:26px minmax(0,1fr);gap:var(--s2);padding-block:var(--s2)}
+.why p+p{border-top:2px solid var(--hair)}
+.why p::before{content:"✓";font-family:var(--display);color:var(--ok);font-size:22px;line-height:1.1}
+.why p.minus::before{content:"!";color:var(--warn)}
+.hotel{overflow:hidden;background:var(--white);border:3px solid var(--ink);border-radius:var(--r-organic);box-shadow:var(--pop)}
+.galwrap{position:relative;border-bottom:3px solid var(--ink)}
+.gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.gal::-webkit-scrollbar{display:none}
+.gal img{flex:0 0 100%;width:100%;aspect-ratio:4/3;object-fit:cover;scroll-snap-align:start}
+.gnav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:3px solid var(--ink);background:var(--paper);color:var(--ink);display:grid;place-items:center;font-weight:800;font-size:20px;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+.gnav.prev{left:var(--s3)}.gnav.next{right:var(--s3)}
+.gnav:active{transform:translateY(-50%) scale(.92)}
+.dots{position:absolute;bottom:var(--s3);left:50%;transform:translateX(-50%);display:flex;gap:6px;background:rgba(22,18,58,.6);padding:6px 8px;border-radius:var(--r-full)}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--paper);opacity:.5}
+.dots i.on{opacity:1;background:var(--saffron)}
+.hotel .body{padding:var(--s4) var(--s5) var(--s5);display:flex;flex-direction:column;gap:var(--s3)}
+.hotel .head{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--s3)}
+.hotel .where{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.08em;margin-top:6px}
+.score{font-family:var(--display);font-size:24px;background:var(--ink);color:var(--paper);border-radius:var(--r-soft);padding:4px 12px;line-height:1.1;white-space:nowrap}
+.seg{display:inline-flex;border:2px solid var(--ink);border-radius:var(--r-full);padding:3px;background:var(--paper);align-self:flex-start}
+.seg button{border:0;background:transparent;font-weight:700;font-size:15px;padding:0 16px;min-height:42px;border-radius:var(--r-full);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.offer{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3);flex-wrap:wrap}
+.offer .price{font-family:var(--display);font-size:clamp(40px,11vw,54px);line-height:1}
+.offer .spec{font-weight:700}
+.paid{font-size:14px;font-weight:700;background:var(--saffron);border-radius:var(--r-control);padding:var(--s2) var(--s3)}
+.pair{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s5)}
+details.more{border-top:2px solid var(--hair);padding-top:var(--s2)}
+details.more>summary{cursor:pointer;list-style:none;font-weight:800;display:flex;align-items:center;justify-content:space-between;gap:var(--s2);min-height:48px}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::after{content:"+";font-family:var(--display);font-size:26px;line-height:1;transition:transform .2s}
+details.more[open]>summary::after{transform:rotate(45deg)}
+details.more>.inner{padding-block:var(--s2) var(--s3)}
+.t-ink details.more{border-color:var(--hair-dark)}
+.srow{display:grid;grid-template-columns:96px minmax(0,1fr);gap:var(--s3);align-items:center;padding-block:var(--s2)}
+.srow+.srow{border-top:2px solid var(--hair)}
+.srow .lab{font-weight:800;font-size:15px}
+.bars{display:grid;gap:5px}
+.br{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:var(--s2);align-items:center}
+.br .tr{height:12px;border-radius:var(--r-full);background:rgba(22,18,58,.08);overflow:hidden}
+.br .f{height:100%;border-radius:var(--r-full)}
+.br.e .f{background:var(--iznik)}.br.a .f{background:var(--tulip)}
+.br .v{font-family:var(--mono);font-weight:700;font-size:13px;text-align:right}
+.br .v.win{color:var(--ok)}
+.legend{display:flex;gap:var(--s4);flex-wrap:wrap;font-weight:700;font-size:14px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.rv{display:grid;grid-template-columns:18px minmax(0,1fr);gap:var(--s2);padding-block:var(--s2);font-size:15px}
+.rv+.rv{border-top:2px solid var(--hair)}
+.rv::before{content:"";width:14px;height:14px;border-radius:50%;margin-top:4px;border:2px solid var(--ink);background:var(--white)}
+.rv.bad::before{background:var(--tulip)}
+.rv small{display:block;font-family:var(--mono);font-size:10px;opacity:.65;letter-spacing:.05em}
+
+/* guida */
+.days{display:flex;gap:var(--s2);overflow-x:auto;scrollbar-width:none;padding-bottom:var(--s2);scroll-snap-type:x proximity;margin-inline:calc(var(--gut-l) * -1) calc(var(--gut-r) * -1);padding-inline:var(--gut-l) var(--gut-r)}
+.days::-webkit-scrollbar{display:none}
+.days button{flex:0 0 auto;scroll-snap-align:start;border:3px solid var(--ink);background:var(--white);border-radius:var(--r-soft);padding:8px 14px;cursor:pointer;text-align:left;font-weight:700;font-size:13px;line-height:1.15;min-height:58px}
+.days button b{display:block;font-family:var(--display);font-weight:400;font-size:20px}
+.days button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.days button.sp{background:var(--saffron)}
+.days button.sp[aria-pressed="true"]{background:var(--ink)}
+.dtitle{font-size:clamp(36px,10vw,56px)}
+.fact{border-left:6px solid var(--saffron);padding-left:var(--s3);font-size:15px}
+.fact b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em}
+.note{font-size:15px;font-weight:600;background:var(--rose);border-radius:var(--r-soft);padding:var(--s3) var(--s4)}
+.stop{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s3);padding-block:var(--s3);align-items:center;width:100%;text-align:left;background:transparent;border:0;border-top:2px solid var(--hair);cursor:pointer;color:inherit}
+.stop:first-child{border-top:0}
+.stop.static{cursor:default}
+.stop .top{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2)}
+.stop .what{font-weight:800;font-size:17px}
+.stop .d{display:block;font-size:15px;opacity:.82;margin-top:4px}
+.stop .cost{display:block;font-family:var(--mono);font-size:12px;font-weight:700;margin-top:4px}
+.stop .open{width:40px;height:40px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-weight:800;background:var(--paper);flex:0 0 auto}
+.tag{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:var(--r-full);padding:3px 9px;border:2px solid var(--ink);white-space:nowrap}
+.tag.in{background:var(--iznik);color:var(--paper)}
+.tag.out{background:var(--white)}
+.tag.free{background:var(--pistachio)}
+.tag.gem{background:var(--saffron)}
+.tag.go{background:var(--paper);border-style:dashed}
+.keys{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center}
+.meal{display:grid;grid-template-columns:76px minmax(0,1fr);gap:var(--s3);padding-block:var(--s3);align-items:baseline}
+.meal+.meal{border-top:2px solid var(--hair)}
+.meal b{font-family:var(--mono);font-size:11px;letter-spacing:.1em}
+.meal .n{font-family:var(--display);font-size:22px;line-height:1.05;display:block}
+.meal .z{display:block;font-family:var(--mono);font-size:11px;font-weight:700;margin-top:2px}
+.meal .t{display:block;font-size:15px;margin-top:2px}
+.meal .w{display:block;font-size:13px;font-weight:700;margin-top:2px;color:var(--warn)}
+.dayblock{padding-block:var(--s4)}
+.dayblock+.dayblock{border-top:3px solid var(--ink)}
+.dayblock h3{font-size:clamp(24px,6.5vw,32px)}
+.lnk{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s2)}
+.lnk a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:2px solid var(--ink);border-radius:var(--r-full);background:var(--white);font-size:13px;font-weight:800;text-decoration:none}
+.warnbox{background:var(--white);border:3px solid var(--warn);border-radius:var(--r-organic);padding:var(--s5);display:flex;flex-direction:column;gap:var(--s3)}
+.warnbox .eyebrow{color:var(--warn)}
+.tipgroup{padding-block:var(--s4)}
+.tipgroup+.tipgroup{border-top:3px solid var(--ink)}
+.tiph{display:flex;align-items:center;gap:var(--s3);font-size:clamp(28px,7.5vw,40px);margin-bottom:var(--s2)}
+.tipn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--tulip);color:var(--ink);font-size:22px;flex:0 0 auto}
+.tip{display:grid;gap:2px;padding-block:var(--s3)}
+.tip+.tip{border-top:2px solid var(--hair)}
+.tip b{font-weight:800;font-size:17px}
+.tip span{font-size:15px;opacity:.85}
+
+/* scheda di approfondimento */
+dialog.sheet{border:0;padding:0;margin:auto auto 0;width:100%;max-width:640px;max-height:88vh;max-height:88dvh;border-radius:var(--r-organic) var(--r-organic) 0 0;background:var(--paper);color:var(--ink);border-top:3px solid var(--ink);overflow:auto}
+dialog.sheet::backdrop{background:rgba(22,18,58,.6)}
+@media (min-width:700px){dialog.sheet{margin:auto;border-radius:var(--r-organic);border:3px solid var(--ink);box-shadow:var(--pop)}}
+.sheet .in{padding:var(--s5) var(--gut-r) max(var(--s5),env(safe-area-inset-bottom,0px)) var(--gut-l);display:flex;flex-direction:column;gap:var(--s4)}
+.sheet .grab{width:44px;height:5px;border-radius:3px;background:var(--hair);margin:0 auto}
+.sheet h3{font-size:clamp(30px,8vw,44px)}
+.sheet .txt p+p{margin-top:var(--s3)}
+.sheet .acts{display:grid;gap:var(--s2)}
+.sheet .acts .btn{font-size:20px;min-height:52px}
+.sheet .x{position:sticky;top:0;align-self:flex-end;width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:var(--white);font-size:20px;font-weight:800;cursor:pointer}
+
+/* elenchi tabellari appendice */
+.tbl{display:grid}
+.tbl .r{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s3);padding-block:var(--s3);border-top:2px solid var(--hair)}
+.tbl .r:first-child{border-top:0}
+.tbl .r b{display:block}
+.tbl .r small{display:block;font-size:14px;opacity:.8}
+.tbl .r .v{font-family:var(--mono);font-weight:700;white-space:nowrap;text-align:right}
+.cheap{background:var(--white);border:3px solid var(--ink);border-radius:var(--r-organic);box-shadow:var(--pop);padding:var(--s5)}
+.cheap .big{font-family:var(--display);font-size:clamp(52px,14vw,88px);line-height:.9}
+.timeline .r{grid-template-columns:64px minmax(0,1fr)}
+.timeline .r .v{text-align:left}
+
+/* riepilogo e lista */
+.srec{display:grid;grid-template-columns:110px minmax(0,1fr);gap:var(--s3);padding-block:var(--s3)}
+.srec+.srec{border-top:1px solid var(--hair-dark)}
+.srec b{font-family:var(--mono);font-size:11px;letter-spacing:.1em;padding-top:4px;opacity:.75}
+.srec span{font-weight:700}
+.money{background:var(--saffron);color:var(--ink);border:3px solid var(--ink);border-radius:var(--r-organic);box-shadow:5px 5px 0 var(--paper);padding:var(--s5)}
+.money .big{font-family:var(--display);font-size:clamp(48px,13vw,84px);line-height:.9}
+.money .row{display:flex;justify-content:space-between;gap:var(--s3);padding-block:6px;font-weight:600}
+.money .row+.row{border-top:2px solid var(--hair)}
+.check{display:grid;grid-template-columns:30px minmax(0,1fr);gap:var(--s3);padding-block:var(--s3);border-bottom:2px solid var(--hair);cursor:pointer}
+.check input{appearance:none;-webkit-appearance:none;width:26px;height:26px;border:3px solid var(--ink);border-radius:var(--r-control);background:var(--white);cursor:pointer;margin:2px 0 0;display:grid;place-items:center}
+.check input:checked{background:var(--ink)}
+.check input:checked::after{content:"";width:11px;height:6px;border-left:3px solid var(--pistachio);border-bottom:3px solid var(--pistachio);transform:rotate(-45deg) translate(1px,-1px)}
+.check:has(input:checked) .txt{text-decoration:line-through;opacity:.55}
+.check .txt b{display:block}
+.check .txt span{font-size:15px;opacity:.8}
+.count{font-family:var(--mono);font-size:13px;font-weight:700}
+
+/* ---------- v9: match, nastro, storie ---------- */
+.noimg{visibility:hidden}
+.deck{display:flex;flex-direction:column;align-items:center;gap:var(--s3)}
+.stack{position:relative;width:min(100%,360px,calc((100vh - 470px) * .8));width:min(100%,360px,calc((100dvh - 470px) * .8));min-width:220px;aspect-ratio:4/5}
+.card{position:absolute;inset:0;border:3px solid var(--ink);border-radius:var(--r-organic);overflow:hidden;background:var(--iznik);box-shadow:var(--pop);touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.card:not(.top){transform:scale(.94) translateY(14px);filter:brightness(.92)}
+.card.top{will-change:transform}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.card .ov{position:absolute;left:0;right:0;bottom:0;padding:56px var(--s4) var(--s4);background:linear-gradient(to top,rgba(22,18,58,.92),rgba(22,18,58,.55) 60%,transparent);color:var(--paper);display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.card .ov h3{font-size:clamp(28px,8vw,38px);color:var(--paper)}
+.card .ov p{font-size:15px;line-height:1.35}
+.card .ov .cost{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--saffron)}
+.card .cr{position:absolute;top:8px;right:10px;font-size:9px;color:var(--paper);opacity:.75;max-width:70%;text-align:right;text-shadow:0 1px 2px #000}
+.stamp{position:absolute;top:24px;padding:4px 14px;border:4px solid;border-radius:12px;font-family:var(--display);font-size:34px;opacity:0;transition:opacity .15s;z-index:2}
+.stamp.like{left:18px;color:var(--pistachio);border-color:var(--pistachio);transform:rotate(-14deg)}
+.stamp.nope{right:18px;color:var(--tulip);border-color:var(--tulip);transform:rotate(14deg)}
+.card.l .stamp.like,.card.n .stamp.nope{opacity:1}
+.dcount{font-family:var(--mono);font-size:12px;font-weight:700}
+.dbtns{display:flex;gap:var(--s5);align-items:center}
+.dbtn{width:68px;height:68px;border-radius:50%;border:3px solid var(--ink);background:var(--white);font-size:28px;font-weight:800;cursor:pointer;box-shadow:var(--pop);display:grid;place-items:center}
+.dbtn.no{color:var(--tulip)}.dbtn.yes{color:var(--ok);background:var(--pistachio)}
+.dbtn.info{width:48px;height:48px;font-size:18px;font-family:var(--display)}
+.dbtn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.dhint{font-size:13px;opacity:.7}
+.dhead{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--s3)}
+.fact-btn{width:48px;height:48px;border-radius:50%;border:3px solid var(--ink);background:var(--saffron);font-family:var(--display);font-size:24px;cursor:pointer;flex:0 0 auto;box-shadow:3px 3px 0 var(--ink)}
+.pill-warn{font-size:14px;font-weight:700;background:var(--rose);border-radius:var(--r-full);padding:6px 14px;align-self:flex-start}
+.nastro{position:relative;display:flex;flex-direction:column;gap:0;padding-left:18px}
+.nastro::before{content:"";position:absolute;left:30px;top:20px;bottom:20px;width:4px;background:var(--ink);border-radius:2px}
+.nrow{position:relative;display:grid;grid-template-columns:56px minmax(0,1fr) 24px;gap:var(--s3);align-items:center;padding-block:10px;background:transparent;border:0;text-align:left;cursor:pointer;color:inherit;width:100%;margin-left:-18px;padding-left:4px}
+.nrow .thumb{width:56px;height:56px;border-radius:50%;object-fit:cover;border:3px solid var(--ink);background:var(--iznik);position:relative;z-index:1}
+.nrow .nic{width:56px;height:56px;border-radius:50%;border:3px solid var(--ink);background:var(--paper);display:grid;place-items:center;position:relative;z-index:1}
+.nrow .nic svg{width:24px;height:24px}
+.nrow.meal-pin .nic{background:var(--rose)}
+.nrow.go{cursor:default;opacity:.8}
+.nrow .nt b{display:block;font-weight:800;font-size:16px;line-height:1.2}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px}
+.cchip{font-family:var(--mono);font-size:10.5px;font-weight:700;border:2px solid var(--ink);border-radius:var(--r-full);padding:2px 8px;background:var(--white)}
+.cchip.warnc{background:var(--rose)}
+.go-i{font-family:var(--display);font-size:26px}
+.big-fact{font-family:var(--display);font-size:clamp(24px,6.5vw,32px);line-height:1.15}
+.sheet .simg{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--r-soft);border:3px solid var(--ink)}
+.credits p{font-size:12px;padding-block:4px;border-top:1px solid var(--hair-dark)}
+.sheet .scr{font-size:11px;opacity:.6;margin-top:-8px}
+.mday{padding-block:var(--s3)}
+.mday+.mday{border-top:2px solid var(--hair)}
+.mrow{display:flex;gap:var(--s3);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:var(--s2) 4px var(--s3);margin-top:var(--s2)}
+.mrow::-webkit-scrollbar{display:none}
+.mcard{position:relative;flex:0 0 62%;max-width:240px;scroll-snap-align:start}
+.mtap{display:block;width:100%;padding:0;border:3px solid var(--ink);border-radius:var(--r-soft);overflow:hidden;background:var(--white);cursor:pointer;text-align:left;box-shadow:4px 4px 0 var(--ink)}
+.mtap img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--iznik)}
+.mlab{position:absolute;top:10px;left:10px;font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:var(--ink);color:var(--paper);border-radius:var(--r-full);padding:3px 9px}
+.mbody{display:flex;align-items:center;gap:8px;padding:10px 12px}
+.mbody b{flex:1;font-weight:800;font-size:15px;line-height:1.2}
+.mbody span{font-family:var(--display);font-size:18px}
+.mwarn{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--tulip);color:var(--ink);font-family:var(--display);font-size:14px!important}
+.swap{position:absolute;top:8px;right:8px;width:40px;height:40px;border-radius:50%;border:2px solid var(--ink);background:var(--saffron);font-size:20px;font-weight:800;cursor:pointer}
+.order{display:grid;gap:0}
+.oitem{display:grid;grid-template-columns:64px minmax(0,1fr);gap:var(--s3);align-items:center;padding-block:10px;border-top:2px solid var(--hair)}
+.oitem:first-child{border-top:0}
+.oitem .thumb{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid var(--ink);background:var(--iznik)}
+.oitem b{display:block;font-family:var(--display);font-size:clamp(26px,7vw,34px);line-height:1}
+.oitem small{display:block;font-size:14px;opacity:.75;margin-top:2px}
+.hrow{display:flex;gap:var(--s3);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 4px var(--s3)}
+.hrow::-webkit-scrollbar{display:none}
+.hcard{flex:0 0 60%;max-width:230px;scroll-snap-align:start;padding:0;border:3px solid var(--ink);border-radius:var(--r-soft);overflow:hidden;background:var(--white);text-align:left;cursor:pointer;box-shadow:4px 4px 0 var(--ink);display:flex;flex-direction:column}
+.hcard img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--iznik)}
+.hcard>span:last-child{padding:10px 12px}
+.hcard b{display:block;font-weight:800;font-size:15px}
+.hcard small{display:block;font-size:12px;opacity:.75}
+.hcard.static{cursor:default}
+.lab-ico{display:grid;place-items:center;height:80px;background:var(--saffron)}
+.lab-ico svg{width:36px;height:36px}
+.srow2{border-top:2px solid var(--hair);padding-bottom:8px}
+.srow2:first-child{border-top:0}
+.srow2 .lnk{margin:0 0 0 72px}
+details.warnbox summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;gap:4px}
+details.warnbox summary::-webkit-details-marker{display:none}
+details.warnbox p{margin-top:var(--s3);font-size:15px}
+.circles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4) var(--s3)}
+.circle{display:flex;flex-direction:column;align-items:center;gap:6px;background:transparent;border:0;cursor:pointer;text-align:center}
+.circle .ring{width:84px;height:84px;border-radius:50%;padding:5px;background:conic-gradient(var(--tulip),var(--saffron),var(--rose),var(--tulip));display:grid;place-items:center}
+.circle.seen .ring{background:var(--pistachio)}
+.circle .cn{width:100%;height:100%;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-size:32px;border:4px solid var(--paper)}
+.circle b{font-weight:800;font-size:15px}
+.circle small{font-size:12px;opacity:.7}
+.story{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 12px) var(--gut-r) max(24px,env(safe-area-inset-bottom,0px)) var(--gut-l);color:var(--ink)}
+.story[hidden]{display:none}
+.story.st0{background:var(--saffron)}.story.st1{background:var(--rose)}.story.st2{background:var(--pistachio)}.story.st3{background:var(--paper)}
+.sbars{display:flex;gap:4px}
+.sbars i{flex:1;height:4px;border-radius:2px;background:rgba(22,18,58,.2);overflow:hidden;position:relative}
+.sbars i.full{background:var(--ink)}
+.sbars i.now{background:linear-gradient(to right,var(--ink) calc(var(--p,1)*100%),rgba(22,18,58,.2) 0)}
+.stop-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;position:relative;z-index:3}
+.sx{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:var(--white);font-size:18px;font-weight:800;cursor:pointer}
+.sbody{flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--s4);max-width:640px;margin:0 auto;width:100%;pointer-events:none;position:relative;z-index:1}
+.sbody h3{font-size:clamp(44px,12vw,80px);line-height:.95}
+.sbody p{font-size:clamp(20px,5.4vw,26px);font-weight:600;line-height:1.35}
+.stap{text-align:center;font-size:13px;opacity:.6}
+.sacts{display:flex;flex-direction:column;gap:var(--s2);position:relative;z-index:3;max-width:640px;margin:0 auto;width:100%}
+.szone{position:absolute;top:80px;bottom:140px;width:40%;background:transparent;border:0;z-index:2;cursor:pointer}
+.szone.prev{left:0}.szone.next{right:0;width:60%}
+.pbar{height:16px;border:3px solid var(--ink);border-radius:var(--r-full);background:var(--white);overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--ink)}
+.bags{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3)}
+.bagt{display:flex;flex-direction:column;align-items:center;gap:6px;padding:var(--s4);border:3px solid var(--ink);border-radius:var(--r-organic);background:var(--white);cursor:pointer;box-shadow:4px 4px 0 var(--ink)}
+.bagt.full{background:var(--pistachio)}
+.bagt b{font-family:var(--display);font-size:22px;font-weight:400}
+.bagt small{font-family:var(--mono);font-weight:700}
+.pring{width:64px;height:64px;transform:rotate(-90deg)}
+.pring circle{fill:none;stroke:rgba(22,18,58,.12);stroke-width:6}
+.pring circle.v{stroke:var(--ink);stroke-linecap:round}
+.costbar{display:flex;height:34px;border:3px solid var(--ink);border-radius:var(--r-full);overflow:hidden;margin-top:var(--s3)}
+.costbar i{display:block;height:100%}
+.costbar i+i{border-left:2px solid var(--ink)}
+.clegend{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--s3)}
+.cl{display:inline-flex;align-items:center;gap:6px;border:2px solid var(--ink);border-radius:var(--r-full);padding:4px 10px;background:var(--paper);font-weight:700;font-size:13px;cursor:pointer;min-height:36px}
+.cl i{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink)}
+.cl b{font-family:var(--mono)}
+.ptl{position:relative;display:flex;flex-direction:column}
+.ptl::before{content:"";position:absolute;left:76px;top:14px;bottom:14px;width:4px;background:var(--ink)}
+.pt{display:grid;grid-template-columns:52px 52px minmax(0,1fr);gap:var(--s2);align-items:center;padding-block:6px}
+.ptime{font-family:var(--mono);font-weight:700;font-size:14px}
+.pdot{width:46px;height:46px;border-radius:50%;border:3px solid var(--ink);background:var(--saffron);display:grid;place-items:center;position:relative;z-index:1}
+.pdot svg{width:22px;height:22px}
+.plab{font-weight:800}
+@media (min-width:700px){.circles{grid-template-columns:repeat(6,minmax(0,1fr))}.bags{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+@media (min-width:700px){.opts.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:900px){.pair{grid-template-columns:repeat(2,minmax(0,1fr))}.page .col.wide{max-width:1040px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="bar" id="bar" hidden>
+  <div class="in"><button type="button" class="back" id="back" aria-label="Pagina precedente">←</button><span class="lab" id="barLab"></span><span class="cnt" id="barCnt"></span></div>
+  <div class="prog"><i id="barProg"></i></div>
+</div>
+<main id="app"></main>
+<dialog class="sheet" id="sheet" aria-labelledby="shTitle"><div class="in" id="shIn"></div></dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/InertiaPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.js"></script>
+<script>
+(function(){
+document.documentElement.lang="it";
+var REDUCE=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var G=!!window.gsap&&!REDUCE;if(G&&window.SplitText)gsap.registerPlugin(SplitText);
+var COLORS=["#ffc626","#ff4a2f","#ff9fd0","#8fdc8a","#2338d6"];
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;")}
+function load(k){try{var x=localStorage.getItem("ist4-"+k);return x?JSON.parse(x):null}catch(e){return null}}
+function save(k,v){try{localStorage.setItem("ist4-"+k,JSON.stringify(v))}catch(e){}}
+function boom(n,y){if(window.confetti&&!REDUCE)confetti({particleCount:n||120,spread:90,origin:{y:y||.6},colors:COLORS,disableForReducedMotion:true})}
+var A=load("answers")||{};
+var PAM=function(){return A.p2==="pam"||A.p2==="both"};
+var ASIA=function(){return A.p2==="asia"||A.p2==="both"};
+
+/* =================== HOTEL =================== */
+var HOTELS={
+  E:{name:"Enderun",where:"BEYAZIT · 1887 RECENSIONI",score:"9,5",paid:"Spa, sauna, bagno turco e idromassaggio sono a pagamento, non inclusi nel pacchetto. La palestra è gratis.",
+     short:"Palazzo barocco vicino al Gran Bazar: camere più grandi, voti altissimi.",
+     rooms:[{lab:"Standard",price:1081,spec:"20 mq · letto king size",line:"Palazzo in stile barocco a 7 minuti dal Gran Bazar, con colazione nel gazebo del cortile.",imgs:[["enderun_std_1","camera Standard con parete rossa damascata"],["enderun_std_4","camera Standard con tende dorate"],["enderun_std_3","camera Standard color crema"],["enderun_std_2","camera Standard con scrivania"]]},
+            {lab:"Deluxe",price:1171,spec:"30 mq · letto king size",line:"Dieci metri quadri in più e un salottino. Supera il budget di 71 €.",imgs:[["enderun_dlx_1","camera Deluxe con tavolino e tappeto"],["enderun_dlx_3","camera Deluxe con zona salotto"],["enderun_dlx_2","bagno della camera Deluxe"]]}]},
+  A:{name:"Aybar",where:"SULTANAHMET · 867 RECENSIONI",score:"8,5",paid:"Sauna e massaggi: chiedete all'hotel se sono a pagamento, Booking non lo specifica.",
+     short:"Boutique moderno in Sultanahmet: monumenti sotto casa, camere più piccole.",
+     rooms:[{lab:"Standard",price:995,spec:"15 mq · matrimoniale o due singoli",line:"La più economica, ma stretta per sei notti.",imgs:[["aybar_std_1","camera Standard con parete bianca in rilievo"],["aybar_std_2","camera Standard con lanterna"],["aybar_std_3","camera Standard verso la finestra"]]},
+            {lab:"Superior",price:1054,spec:"18 mq · matrimoniale",line:"Boutique hotel a 9 minuti a piedi da Santa Sofia.",imgs:[["aybar_shared","camera con letto matrimoniale e lanterna"],["aybar_sup_1","camera Superior con scrivania"],["aybar_sup_2","camera Superior vista dall'ingresso"]]}]}
+};
+var Q={
+ h1:{ch:"hotel",q:"Sei notti in camera. Cosa conta di più?",o:[["big","Spazio per respirare","20 mq e un letto king size"],["small","Basta un letto","Tanto siamo sempre fuori"]]},
+ h2:{ch:"hotel",q:"La sera, dopo cena?",o:[["relax","Rientro e relax","Una camera curata e silenziosa"],["walk","Passeggiata sotto Santa Sofia","Il centro storico sotto casa"]]},
+ h3:{ch:"hotel",q:"La colazione perfetta?",o:[["court","In un cortile ottomano","Dolce e salata, con calma"],["fast","Buffet veloce e via","La giornata ci aspetta"]]},
+ h4:{ch:"hotel",q:"Che stile vi somiglia?",o:[["baroque","Barocco ottomano","Tende, lampadari, damaschi"],["modern","Boutique moderno","Linee pulite e lanterne"]]},
+ h5:{ch:"hotel",q:"E il budget?",o:[["more","Qualche euro in più","Per stare meglio sei notti"],["less","Più margine","Per cene e souvenir"]]},
+ p1:{ch:"giorni",q:"Che ritmo vi somiglia?",o:[["calm","Con calma","Poche tappe e lunghe colazioni"],["full","A tutta","Vogliamo vedere tutto"]]},
+ p2:{ch:"giorni",q:"Il giorno speciale?",o:[["pam","Pamukkale in giornata","Volo all'alba, terrazze bianche e rovine romane. Costo extra."],["asia","Il lato asiatico","Kuzguncuk, Üsküdar e il tramonto da Salacak"],["both","Tutti e due","Mercoledì Pamukkale, venerdì il lato asiatico"]]},
+ p3:{ch:"giorni",q:"Cosa vi accende?",multi:1,hint:"Anche più di una.",o:[["storia","Storia e mosaici"],["bazar","Bazar e botteghe"],["vista","Panorami e Bosforo"],["local","Quartieri da local"]]},
+ p4:{ch:"giorni",q:"Musei e biglietti?",o:[["in","Entriamo dove vale","Santa Sofia, Topkapı, cisterne, palazzi"],["few","Pochi biglietti","Solo i più belli, il resto lo guardiamo da fuori"]]},
+ p5:{ch:"giorni",q:"Un hammam storico in due?",o:[["yes","Sì, una sera","Bagno turco firmato Sinan, 60–130 € a persona"],["no","No, grazie","Meglio un tramonto in più"]]},
+ p6:{ch:"giorni",q:"Le serate ideali?",o:[["meyhane","Meze e rakı","Tavolate lunghe nelle meyhane"],["sunset","Tramonti e passeggiate","Panorami e lungomare"]]},
+ f1:{ch:"tavola",q:"Quanto spendiamo a tavola?",o:[["low","Poco, come i local","Lokanta, cibo di strada e mercati"],["mid","Giusto","Buone trattorie e qualche meyhane"],["special","Giusto, più una serata speciale","Una cena stellata Michelin"]]},
+ f2:{ch:"tavola",q:"Cosa vi fa venire fame?",multi:1,hint:"Anche più di una.",o:[["casa","Cucina di casa"],["carne","Carne e griglia"],["meze","Meze, pesce e rakı"],["street","Cibo di strada"]]},
+ f3:{ch:"tavola",q:"E i dolci?",o:[["yes","Uno al giorno","Baklava, boza e caffè turco"],["no","Ogni tanto","Ci bastano i pasti"]]},
+ s1:{ch:"botteghe",q:"Cosa portiamo a casa?",multi:1,hint:"Anche più di una.",o:[["dolci","Dolci"],["caffe","Caffè e spezie"],["tessili","Teli e tappeti"],["artigiani","Ceramica, rame e argento"],["antico","Libri e antichità"],["falsi","Abbigliamento e borse contraffatti"]]},
+ s2:{ch:"botteghe",q:"Un laboratorio da fare in due?",o:[["yes","Sì, mani in pasta","Ceramica, carta marmorizzata o caffè sulla sabbia"],["no","No, solo shopping","Andiamo a caccia di botteghe"]]}
+};
+var CH={welcome:"Benvenuti",hotel:"Dove dormiamo",giorni:"I nostri giorni",tavola:"A tavola",botteghe:"Botteghe",fine:"Il nostro viaggio",consigli:"Consigli",partire:"Prima di partire",appendice:"Appendice Pamukkale"};
+var THEME={hotel:"t-rose",giorni:"t-green",tavola:"t-saffron",botteghe:"t-rose",welcome:"t-paper",fine:"t-ink",consigli:"t-paper",partire:"t-green",appendice:"t-paper"};
+var ALL=[
+ {id:"splash"},{id:"welcome",ch:"welcome"},
+ {id:"c-hotel",ch:"hotel",cover:["1","Dove dormiamo","Due hotel in finale. Prima li guardiamo, poi cinque domande per capire quale vi somiglia di più."]},
+ {id:"duel",ch:"hotel"},
+ {id:"h1",q:1},{id:"h2",q:1},{id:"h3",q:1},{id:"h4",q:1},{id:"h5",q:1},{id:"r-hotel",ch:"hotel"},
+ {id:"c-giorni",ch:"giorni",cover:["2","I nostri giorni","Sei domande e la guida dei sette giorni si costruisce sulle vostre risposte."]},
+ {id:"p1",q:1},{id:"p2",q:1},{id:"p3",q:1},{id:"p4",q:1},{id:"p5",q:1},{id:"p6",q:1},{id:"r-giorni",ch:"giorni"},{id:"appendice",ch:"appendice",only:PAM},
+ {id:"c-tavola",ch:"tavola",cover:["3","A tavola","Tre domande e vi diciamo dove pranzare e cenare ogni giorno, vicino a dove sarete."]},
+ {id:"f1",q:1},{id:"f2",q:1},{id:"f3",q:1},{id:"r-tavola",ch:"tavola"},{id:"piatti",ch:"tavola"},
+ {id:"c-botteghe",ch:"botteghe",cover:["4","Botteghe e bazar","Due domande per riempire la valigia nel modo giusto."]},
+ {id:"s1",q:1},{id:"s2",q:1},{id:"r-botteghe",ch:"botteghe"},
+ {id:"fine",ch:"fine"},{id:"consigli",ch:"consigli"},{id:"partire",ch:"partire"},{id:"grazie"}
+];
+function FLOW(){return ALL.filter(function(s){return !s.only||s.only()})}
+
+var HW={h1:{big:["E",2],small:["A",2]},h2:{relax:["E",1],walk:["A",2]},h3:{court:["E",1],fast:["A",1]},h4:{baroque:["E",1],modern:["A",1]},h5:{more:["E",1],less:["A",1]}};
+var HWHY={big:"Camera da 20 mq con letto king size, la più grande delle due.",small:"Camera più piccola ma sempre a due passi dai monumenti.",relax:"Pulizia e comfort votati 9,5 su Booking.",walk:"Santa Sofia a 9 minuti a piedi, la Cisterna a 6.",court:"Colazione nel gazebo del cortile, lodata nelle recensioni.",fast:"Buffet semplice, perfetto per partire presto.",baroque:"Camere in stile barocco, tutte diverse.",modern:"Camere moderne con lanterne e legno chiaro.",more:"1081 € in due: 27 € più della superior di Aybar.",less:"Da 995 € in due: più margine per il viaggio."};
+function hotelWinner(){var s={E:0,A:0};["h1","h2","h3","h4","h5"].forEach(function(k){var w=A[k]&&HW[k][A[k]];if(w)s[w[0]]+=w[1]});return s.A>s.E?"A":"E"}
+
+/* =================== SCHEDE DEI LUOGHI =================== */
+var INFO={
+"Ippodromo e piazza Sultanahmet":"Era il cuore della Costantinopoli bizantina: qui decine di migliaia di persone tifavano le corse delle bighe, e nel 532 da qui partì la rivolta di Nika. Oggi è una piazza allungata con tre monumenti: l'obelisco egizio del faraone Thutmose III, rialzato qui nel 390, la Colonna Serpentina arrivata da Delfi e l'obelisco murato. Da qui si vedono insieme Santa Sofia e la Moschea Blu.",
+"Piccola Santa Sofia":"Costruita da Giustiniano tra il 527 e il 536 come chiesa dei santi Sergio e Bacco, poco prima di Santa Sofia: per questo la chiamano la sua «prova generale». Oggi è una moschea, gratuita e quasi sempre tranquilla. Nella medrese accanto si tengono laboratori di pittura su ceramica.",
+"Moschea di Sokollu Mehmed Paşa":"Piccola moschea progettata da Sinan nel 1571–72 per il gran visir Sokollu Mehmed Paşa. Le piastrelle di Iznik sono tra le più belle della città, e sopra l'ingresso, nel mihrab e nel minbar sono incastonati frammenti della Pietra Nera della Kaaba. Si trova in salita, a otto minuti dalla Piccola Santa Sofia.",
+"Arasta Bazaar":"Una fila di botteghe ai piedi della Moschea Blu, nata per finanziarne la manutenzione con gli affitti. Tessili, ceramiche e tappeti, in un ambiente più calmo del Gran Bazar e aperto anche la domenica. Qui c'è Jennifer's Hamam, con i teli tessuti a mano.",
+"Santa Sofia":"Consacrata da Giustiniano nel 537 dopo appena cinque anni di lavori, è stata per quasi mille anni la chiesa più grande del mondo. Moschea dal 1453, museo dal 1934 e di nuovo moschea dal 2020. Gli stranieri entrano dall'ingresso est e visitano la galleria superiore, da cui si vedono i mosaici bizantini e la grande cupola. Sulla balaustra c'è il graffito runico di un vichingo di nome Halfdan.",
+"Moschea Blu":"La moschea del sultano Ahmed fu terminata nel 1616 e si chiama «Blu» per le oltre 20.000 piastrelle di Iznik dell'interno. Quando fu costruita era l'unica di Istanbul con sei minareti. È una moschea attiva: si entra gratis fuori dagli orari della preghiera, con spalle e ginocchia coperte e il foulard per le donne.",
+"Cisterna Basilica":"Il più grande serbatoio sotterraneo della città, voluto da Giustiniano nel VI secolo per rifornire d'acqua il Gran Palazzo. Ha 336 colonne, molte riprese da edifici più antichi, e due basi scolpite con la testa di Medusa, una capovolta e una girata di lato. Si paga solo con carta.",
+"Cisterna di Şerefiye":"Una cisterna più piccola, costruita sotto Teodosio II nel V secolo e riscoperta durante i lavori sotto un edificio comunale. Restaurata e aperta nel 2018, ha un percorso sopraelevato con giochi di luce. È a metà strada tra l'hotel e Sultanahmet, con pochissima coda.",
+"Gran Bazar":"Uno dei mercati coperti più antichi e grandi del mondo, nato sotto Mehmet II subito dopo la conquista del 1453. Oggi ha più di 60 vie e circa 4.000 negozi; il nucleo antico è il Cevahir Bedesteni, il magazzino dei gioielli. È chiuso la domenica. Si tratta sempre sul prezzo, tranne nei negozi a prezzo fisso.",
+"Cortile del Büyük Valide Han":"Il caravanserraglio più grande della città, costruito nel 1651 per la sultana madre Kösem. Qui dormivano i mercanti con le merci; oggi i cortili ospitano tessitori e piccoli laboratori. I suoi tetti compaiono nell'inseguimento iniziale di Skyfall. Il tetto non è sempre accessibile, il cortile sì.",
+"Sahaflar, il mercato dei libri":"Il mercato dei libri usati, in un cortile ombreggiato tra la moschea di Beyazıt e il Gran Bazar. Stampe ottomane, miniature, mappe e calligrafie. È a cinque minuti dall'hotel.",
+"Süleymaniye al tramonto":"La moschea più grande di Istanbul, costruita tra il 1550 e il 1557 da Sinan per Solimano il Magnifico. Nel giardino ci sono le tombe di Solimano e della moglie Hürrem, e Sinan riposa in un piccolo mausoleo all'angolo del complesso. Dalla terrazza sul retro si vede tutto il Corno d'Oro.",
+"Acquedotto di Valente":"Un acquedotto romano completato nel IV secolo sotto l'imperatore Valente. Oggi gli archi scavalcano un viale trafficato e si guardano da fuori, gratis. A pochi passi c'è Vefa Bozacısı, dove si beve la boza dal 1876.",
+"Hierapolis e travertini":"Le terrazze bianche di Pamukkale sono calcare depositato da sorgenti termali che escono a circa 35 °C. Sopra c'è Hierapolis, città greco-romana con un grande teatro, il Plutonium, cioè la «Porta degli Inferi» ritrovata nel 2013 da una missione italiana, e una necropoli con oltre mille tombe. Patrimonio UNESCO dal 1988. Sulle terrazze si cammina solo scalzi.",
+"Piscina antica":"Una vasca termale dove l'acqua resta intorno ai 35 °C tutto l'anno. Sul fondo giacciono colonne di marmo crollate con un terremoto. Si dice che ci abbia fatto il bagno Cleopatra, ma è una leggenda. Il bagno ha un biglietto a parte; il bordo e il bar sono gratis.",
+"Tramonto sulle terrazze":"Verso sera il calcare bianco si colora di rosa e arancio. Fermatevi sul bordo delle vasche prima di ripartire per l'aeroporto.",
+"Traghetto per Üsküdar":"Il traghetto pubblico attraversa il Bosforo in circa 15 minuti, con la vista sul Topkapı e sulla Torre di Leandro. Si paga con l'Istanbulkart. Üsküdar è il lato asiatico più tradizionale, con moschee ottomane e il lungomare.",
+"Kuzguncuk":"Un piccolo quartiere sul Bosforo con case di legno colorate, dove una chiesa, una moschea e una sinagoga stanno a pochi metri l'una dall'altra. È la Istanbul dei local: caffè, panetterie e alberi di fico. Si raggiunge in pochi minuti da Üsküdar.",
+"Tramonto da Salacak":"Il lungomare di Salacak, a Üsküdar, è il posto preferito dei local per il tramonto: davanti la Torre di Leandro, sullo sfondo la città vecchia con cupole e minareti. Ci si siede sugli scalini con un tè.",
+"Torre di Leandro":"Una piccola torre su un isolotto all'ingresso del Bosforo, legata a molte leggende, restaurata e riaperta nel 2023. Compare nel film di James Bond «Il mondo non basta». Al tramonto è perfetta anche da fuori; per entrare servono il biglietto e una barca da Salacak.",
+"Topkapı con l'Harem":"Il palazzo dei sultani ottomani per quasi quattro secoli. Cortili, padiglioni con piastrelle di Iznik, cucine enormi e il Tesoro, con il diamante del Fabbricante di Cucchiai di circa 86 carati. L'Harem, dove vivevano la famiglia del sultano e le concubine, è nel biglietto combinato. Chiuso il martedì.",
+"Parco di Gülhane":"L'antico giardino del Topkapı, oggi parco pubblico. Qui nel 1839 fu letto l'Editto di Gülhane che avviò le riforme ottomane, e in fondo al parco c'è la Colonna dei Goti, di epoca romana. Ad aprile si riempie di tulipani; a marzo è verde e tranquillo.",
+"Bazar delle Spezie":"Costruito negli anni 1660 insieme alla Moschea Nuova, si chiama anche Bazar Egiziano perché era finanziato con le entrate dall'Egitto. Spezie, frutta secca, lokum, tè e caffè, con assaggi a ogni banco. Aperto anche la domenica.",
+"Moschea di Rüstem Paşa":"Una moschea di Sinan costruita su una piattaforma sopra le botteghe del mercato, per Rüstem Paşa, gran visir e genero di Solimano. Le pareti sono coperte di piastrelle di Iznik più che in qualsiasi altra moschea della città. Si sale da una scala stretta tra i negozi: molti non la trovano.",
+"Traghetto per Kadıköy":"Dal molo di Eminönü il traghetto arriva a Kadıköy, sul lato asiatico, in circa 20 minuti. È il modo più economico per vedere il Bosforo. I gabbiani seguono la nave: i local comprano il simit per loro.",
+"Mercato di Kadıköy":"Kadıköy è l'antica Calcedonia, che Erodoto chiamò «città dei ciechi» perché i fondatori non videro la sponda migliore, dove poi nacque Bisanzio. Il suo mercato è il più vivace della città: banchi di pesce, sottaceti, formaggi, cozze ripiene e pasticcerie.",
+"Tramonto sul lungomare di Moda":"Una penisola residenziale a 15 minuti a piedi da Kadıköy, con un lungomare dove la sera si passeggia, ci si siede sugli scogli e si guarda il tramonto sul mare.",
+"Palazzo Dolmabahçe":"Il palazzo che i sultani scelsero nell'Ottocento al posto del Topkapı, in stile europeo, sul Bosforo. Sale piene di cristalli e oro, con un lampadario di circa quattro tonnellate e mezzo. Qui morì Atatürk il 10 novembre 1938 alle 9:05: gli orologi del palazzo sono fermi a quell'ora. Chiuso il lunedì.",
+"Moschea di Ortaköy":"Una piccola moschea del 1854–56, firmata dalla famiglia di architetti Balyan, sulla riva del Bosforo proprio sotto il ponte che unisce Europa e Asia. È una delle foto simbolo di Istanbul. Intorno ci sono i banchi del kumpir.",
+"Crociera sul Bosforo":"Il modo più semplice per vedere ville ottomane, palazzi e fortezze sulle due rive. Le barche di Turyol partono da Eminönü circa ogni ora per un giro di circa 90 minuti. Si passa davanti alla fortezza di Rumeli Hisarı, costruita in circa quattro mesi nel 1452.",
+"Scalinata Camondo":"Una scalinata curva fatta costruire intorno al 1870–80 dal banchiere Abraham Salomon Camondo, tra la via delle banche e la salita verso Galata. Le curve servivano a non far scivolare i passanti.",
+"Torre di Galata":"Torre genovese del 1348 sopra il quartiere che fu colonia di Genova. Secondo la leggenda, nel Seicento Hezarfen Ahmed Çelebi si lanciò da qui con delle ali e planò fino a Üsküdar. Da fuori è bellissima; salire costa 30 € e la coda è lunga.",
+"Çukurcuma":"Un quartiere in salita di Beyoğlu con più di cento antiquari e negozi vintage: tessuti ottomani, lampade, vetri. Qui c'è anche il Museo dell'Innocenza dello scrittore Orhan Pamuk.",
+"Hammam Kılıç Ali Paşa":"Un hammam progettato da Sinan nel 1580 a Tophane, restaurato e riaperto nel 2012. Sotto la cupola ci si sdraia sul marmo caldo, poi arrivano lo scrub con il guanto e la schiuma. I turni sono separati per uomini e donne: per una coppia va chiesta una sezione privata alla prenotazione.",
+"Balat e Fener":"Due quartieri storici sul Corno d'Oro, un tempo delle comunità greca ed ebraica. Case colorate, scalinate ripide, caffè e botteghe. In cima domina il «castello rosso», il liceo greco-ortodosso del Fanar, e poco lontano c'è la sede del Patriarcato ecumenico.",
+"Chiesa bulgara di Santo Stefano":"La chiesa della comunità bulgara, consacrata nel 1898, è tutta in ghisa: i pezzi furono fusi a Vienna e arrivarono lungo il Danubio. Restaurata e riaperta nel 2018, è gratis e si visita in dieci minuti.",
+"Chora (Kariye)":"Una chiesa bizantina con alcuni dei mosaici e affreschi più belli al mondo, realizzati tra il 1315 e il 1321 per Teodoro Metochite, che compare inginocchiato a offrire la chiesa a Cristo. Dal 2024 è una moschea con un percorso turistico a pagamento. Chiusa il venerdì.",
+"Fethiye (Pammakaristos)":"L'antica chiesa della Pammakaristos, con mosaici bizantini del XIV secolo in una cappella laterale: una versione intima della Chora, quasi sempre vuota. A dieci minuti a piedi da Fener. Orari da controllare sul posto.",
+"Funivia di Pierre Loti":"Una collina sopra il Corno d'Oro, raggiungibile con la funivia da Eyüp. Prende il nome dallo scrittore francese Pierre Loti, che frequentava il caffè in cima. Si beve un tè guardando il tramonto.",
+"Ultimi acquisti al Bazar delle Spezie":"La domenica il Gran Bazar è chiuso, ma il Bazar delle Spezie è aperto. Qui si comprano caffè macinato al momento da Kurukahveci Mehmet Efendi e lokum da Hacı Bekir, a pochi passi."
+};
+
+/* =================== GIORNI =================== */
+/* [tipo, titolo, descrizione, costo, regole]  regole: core, x (extra), i (interesse), pay (biglietto facoltativo), ham, eve */
+var WED_ASIA={d:"Mer 17",t:"Asia lenta",th:"Una giornata sul lato asiatico con il tramonto più bello della città.",f:"La Torre di Leandro compare nel film di Bond «Il mondo non basta».",lunch:["asia"],dinner:["asia","eminonu"],
+  s:[["gem","Traghetto per Üsküdar","15 minuti di Bosforo al prezzo di un biglietto del tram.","",{core:1}],["gem","Kuzguncuk","Villaggio sul Bosforo con chiesa, moschea e sinagoga vicine.","",{core:1}],["free","Tramonto da Salacak","La Torre di Leandro davanti e la città vecchia dietro.","",{core:1}],["out","Torre di Leandro","Bella da fuori al tramonto. Entrare costa 27 € più la barca.","27 € a persona",{pay:1,i:"vista"}]]};
+var DAYS=[
+ {d:"Lun 15",t:"Primo tramonto",th:"Atterraggio alle 14:05, valigie in hotel e subito in piazza.",f:"L'obelisco dell'Ippodromo è egizio, del faraone Thutmose III: ha circa 3.500 anni.",lunch:null,dinner:["hotel","eminonu"],
+  s:[["go","Aeroporto → hotel","Bus Havaist per Sultanahmet (circa 8 €, carta a bordo) o transfer. Da 60 a 90 minuti.","",{core:1}],
+     ["free","Ippodromo e piazza Sultanahmet","Santa Sofia e la Moschea Blu una davanti all'altra, al tramonto.","",{core:1}],
+     ["gem","Piccola Santa Sofia","La «prova generale» di Santa Sofia, gratis e quasi vuota.","",{i:"storia"}],
+     ["gem","Moschea di Sokollu Mehmed Paşa","Di Sinan, con frammenti della Pietra Nera della Kaaba.","",{x:1,i:"storia"}],
+     ["free","Arasta Bazaar","Il bazar piccolo dietro la Moschea Blu, aperto anche la sera.","",{i:"bazar"}]]},
+ {d:"Mar 16",t:"Bizantini e bazar",th:"Il giorno dei grandi monumenti. Il Topkapı il martedì è chiuso: lo vediamo giovedì.",f:"Sulla balaustra della galleria di Santa Sofia c'è un graffito runico vichingo del IX secolo: «Halfdan».",note:"Moschee: spalle e ginocchia coperte, foulard per Valentina. Chiudono ai visitatori durante le preghiere.",lunch:["hotel"],dinner:["hotel","eminonu"],
+  s:[["in","Santa Sofia","Solo la galleria superiore per gli stranieri. Arrivate all'apertura.","25 € a persona",{core:1}],
+     ["free","Moschea Blu","Più di 20.000 piastrelle di Iznik.","",{core:1}],
+     ["in","Cisterna Basilica","336 colonne e due teste di Medusa. Solo carta.","circa 38 € a persona",{pay:1,i:"storia"}],
+     ["gem","Cisterna di Şerefiye","L'alternativa piccola e senza coda, con giochi di luce.","circa 18 € a persona",{x:1,i:"storia"}],
+     ["free","Gran Bazar","Più di 60 vie coperte e circa 4.000 negozi, a 5 minuti dall'hotel.","",{core:1}],
+     ["gem","Cortile del Büyük Valide Han","I tetti dell'inseguimento di Skyfall.","",{i:"bazar"}],
+     ["gem","Sahaflar, il mercato dei libri","Stampe ottomane e calligrafie, accanto all'hotel.","",{x:1,i:"bazar"}],
+     ["free","Süleymaniye al tramonto","La moschea di Sinan con la terrazza sul Corno d'Oro.","",{core:1}],
+     ["gem","Acquedotto di Valente","Archi romani del IV secolo in mezzo al traffico.","",{x:1,i:"local"}]]},
+ {d:"Mer 17",t:"Pamukkale in giornata",pam:1,th:"Volo all'alba, terrazze bianche e rovine romane, rientro la sera.",f:"Il Plutonium di Hierapolis l'ha ritrovato nel 2013 una missione archeologica italiana dell'Università del Salento.",note:"Orari, voli e prezzi completi sono nella pagina subito dopo la guida.",lunch:["pamukkale"],dinner:null,
+  s:[["go","04:15 · Taxi per l'aeroporto IST","Circa 45 minuti a quell'ora.","",{core:1}],
+     ["go","06:35 · Volo TK2576 per Denizli","Atterraggio alle 07:40.","",{core:1}],
+     ["go","08:00 · Transfer per Pamukkale","Circa 1 ora dall'aeroporto di Çardak.","",{core:1}],
+     ["in","Hierapolis e travertini","Dalla Porta Sud, poi la discesa scalzi sulle terrazze.","30 € a persona",{core:1}],
+     ["in","Piscina antica","Acqua a 35 °C tra colonne romane. Portate il costume.","circa 15 € a persona",{pay:1,i:"vista"}],
+     ["free","Tramonto sulle terrazze","Il calcare diventa rosa prima di ripartire.","",{x:1,i:"vista"}],
+     ["go","21:10 · Volo TK2579 per Istanbul","Arrivo alle 22:35, in hotel verso le 23:30.","",{core:1}]]},
+ WED_ASIA,
+ {d:"Gio 18",t:"Sultani e due continenti",th:"Il palazzo dei sultani la mattina, il pomeriggio si attraversa in Asia.",f:"Kadıköy è l'antica Calcedonia, che Erodoto chiamò «città dei ciechi».",lunch:["eminonu"],dinner:["asia"],
+  s:[["in","Topkapı con l'Harem","Palazzo, Harem e Santa Irene nel biglietto combinato.","circa 55 € a persona",{core:1}],
+     ["free","Parco di Gülhane","Il giardino del palazzo, verde e tranquillo a marzo.","",{x:1,i:"vista"}],
+     ["free","Bazar delle Spezie","Spezie, lokum, tè. Assaggiare è gratis.","",{core:1}],
+     ["gem","Moschea di Rüstem Paşa","La moschea più rivestita di piastrelle di Iznik. Gratis.","",{i:"storia"}],
+     ["gem","Traghetto per Kadıköy","20 minuti di Bosforo con l'Istanbulkart.","",{core:1}],
+     ["gem","Mercato di Kadıköy","Banchi del pesce, cozze ripiene, botteghe di quartiere.","",{core:1}],
+     ["free","Tramonto sul lungomare di Moda","Il salotto all'aperto dei local.","",{eve:"sunset"}]]},
+ {d:"Ven 19",t:"Bosforo e Galata",fri:1,th:"Palazzi sull'acqua la mattina, Galata la sera.",f:"Atatürk morì al Dolmabahçe il 10 novembre 1938 alle 9:05: gli orologi sono fermi a quell'ora.",note:"Il venerdì le moschee chiudono ai turisti dalle 12:30 alle 14:30 e Chora è chiusa.",lunch:["ortakoy","galata"],dinner:["galata"],
+  s:[["in","Palazzo Dolmabahçe","Il palazzo europeo dei sultani sul Bosforo.","circa 40 € a persona",{pay:1,i:"storia"}],
+     ["free","Moschea di Ortaköy","Davanti al ponte sul Bosforo.","",{core:1}],
+     ["in","Crociera sul Bosforo","Turyol da Eminönü, circa 90 minuti.","5–10 € a persona",{core:1}],
+     ["free","Scalinata Camondo","La scalinata curva del 1870.","",{i:"local"}],
+     ["out","Torre di Galata","Da fuori basta: salire costa 30 € con lunga coda.","30 € a persona",{core:1}],
+     ["gem","Çukurcuma","Antiquari e il Museo dell'Innocenza.","",{x:1,i:"bazar"}],
+     ["in","Hammam Kılıç Ali Paşa","Di Sinan, a Tophane. Chiedete la sezione per coppie.","60–130 € a persona",{ham:1}]]},
+ {d:"Ven 19",t:"Bosforo e Asia",friAsia:1,th:"In barca sul Bosforo la mattina, il lato asiatico fino al tramonto.",f:"La Torre di Leandro compare nel film di Bond «Il mondo non basta».",note:"Il venerdì le moschee chiudono ai turisti dalle 12:30 alle 14:30.",lunch:["asia"],dinner:["asia","galata"],
+  s:[["in","Crociera sul Bosforo","Turyol da Eminönü, circa 90 minuti.","5–10 € a persona",{core:1}],
+     ["gem","Traghetto per Üsküdar","15 minuti di Bosforo con l'Istanbulkart.","",{core:1}],
+     ["gem","Kuzguncuk","Villaggio sul Bosforo con chiesa, moschea e sinagoga vicine.","",{core:1}],
+     ["free","Tramonto da Salacak","La Torre di Leandro davanti e la città vecchia dietro.","",{core:1}],
+     ["out","Torre di Leandro","Bella da fuori. Entrare costa 27 € più la barca.","27 € a persona",{pay:1,i:"vista"}],
+     ["in","Hammam Kılıç Ali Paşa","Di Sinan, a Tophane. Chiedete la sezione per coppie.","60–130 € a persona",{ham:1}]]},
+ {d:"Sab 20",t:"Colori del Corno d'Oro",th:"Case colorate, mosaici bizantini e la collina di Pierre Loti.",f:"La chiesa bulgara di Santo Stefano è tutta in ghisa, fusa a Vienna e arrivata lungo il Danubio.",lunch:["hotel","eminonu"],dinner:["balat","galata"],
+  s:[["gem","Balat e Fener","Case colorate in Kiremit Caddesi.","",{core:1}],
+     ["free","Chiesa bulgara di Santo Stefano","La chiesa di ferro, 10 minuti di visita.","",{core:1}],
+     ["in","Chora (Kariye)","Mosaici del 1315–21 tra i più belli al mondo.","20 € a persona",{core:1}],
+     ["gem","Fethiye (Pammakaristos)","Mosaici del XIV secolo in versione intima.","",{x:1,i:"storia"}],
+     ["gem","Funivia di Pierre Loti","Tè sulla collina al tramonto.","",{eve:"sunset"}],
+     ["out","Torre di Galata","Da fuori basta, al calar della sera.","30 € a persona",{x:1,i:"vista",bothOnly:1}]]},
+ {d:"Dom 21",t:"Colazione e partenza",th:"Ultima colazione lunga, ultimi acquisti e verso l'aeroporto. Volo alle 17:45.",f:"La colazione di Van arriva in decine di piattini da condividere.",note:"La domenica il Gran Bazar è chiuso. Il Bazar delle Spezie e l'Arasta sono aperti.",lunch:null,dinner:null,breakfast:1,
+  s:[["free","Ultimi acquisti al Bazar delle Spezie","Caffè macinato al momento e lokum.","",{core:1}],["go","14:30 · Partenza per l'aeroporto","Taxi o Havaist, almeno 3 ore prima del volo.","",{core:1}]]}
+];
+var TL={free:"Gratis",in:"Biglietto · entrate",out:"Biglietto · basta fuori",gem:"Gem",go:"Spostamento"};
+function planDays(){var both=A.p2==="both";return DAYS.filter(function(x){
+  if(x.pam)return PAM();if(x===WED_ASIA)return !PAM();
+  if(x.fri)return !both;if(x.friAsia)return both;return true})}
+function dayStops(x){
+  var ints=A.p3||[],calm=A.p1==="calm",few=A.p4==="few";
+  return x.s.filter(function(s){var r=s[4]||{};
+    if(r.ham)return A.p5==="yes";
+    if(r.eve)return A.p6===r.eve;
+    if(r.bothOnly&&A.p2!=="both")return false;
+    if(r.core)return true;
+    if(r.pay&&few)return false;
+    var hit=!!(r.i&&ints.indexOf(r.i)>-1);
+    if(r.x)return hit||!calm;
+    if(calm&&r.i&&ints.length&&!hit)return false;
+    return true;
+  });
+}
+
+/* =================== TAVOLA =================== */
+var R=[
+ ["Havuzlu","hotel","Gran Bazar · 6 min a piedi",1,"pranzo",["casa"],"Lokanta del bazar: piatti del giorno e kebab. Arrivate prima delle 15.","Chiuso la domenica",1],
+ ["Erzincanlı Ali Baba","hotel","Süleymaniye · 10 min a piedi",1,"pranzo",["casa"],"Fagioli e riso dal 1924, davanti alla moschea. 8–12 € a testa.","",0],
+ ["Siirt Şeref Büryan","hotel","Fatih · 20 min a piedi",1,"pranzo",["carne"],"Agnello cotto nel pozzo e riso in crosta. Finisce presto.","",0],
+ ["Bahar","hotel","Gran Bazar · 9 min a piedi",1,"pranzo",["casa"],"La mensa dei commercianti del bazar. Chiedete il prezzo prima.","Chiuso la domenica",1],
+ ["Tarihi Sultanahmet Köftecisi","eminonu","Sultanahmet · 10 min a piedi",1,"pranzo cena",["carne","street"],"Köfte e insalata di fagioli dal 1920. 10–15 € a testa.","",0],
+ ["Hocapaşa Pidecisi","eminonu","Sirkeci · tram 10 min",1,"pranzo",["street","casa"],"Pide del forno a legna dal 1964. 5–8 € a testa.","",0],
+ ["Şehzade Erzurum Cağ Kebabı","eminonu","Sirkeci · tram 10 min",1,"pranzo",["carne"],"Agnello allo spiedo orizzontale cotto a legna.","",0],
+ ["Balık ekmek a Eminönü","eminonu","Molo di Eminönü · 15 min a piedi",1,"pranzo",["street","meze"],"Panino con lo sgombro dalle barche, con şalgam. 2–4 €.","",0],
+ ["Kumpir a Ortaköy","ortakoy","Ortaköy",1,"pranzo",["street"],"Patata gigante farcita a scelta, davanti al Bosforo.","",0],
+ ["Dürümzade","galata","Beyoğlu · 35 min con tram e funicolare",1,"cena",["street","carne"],"Il dürüm alla brace più famoso della città, fino a tardi.","",0],
+ ["Teras Restaurant","pamukkale","Paese di Pamukkale",1,"pranzo",["casa"],"Terrazza con vista sulle terrazze bianche, cucina casalinga. 10–20 € a testa.","",0],
+ ["Pandeli","eminonu","Bazar delle Spezie · 15 min a piedi",2,"pranzo",["casa"],"Dal 1901, maioliche turchesi, Bib Gourmand. Solo pranzo. 15–30 € a testa.","Chiuso la domenica",1],
+ ["Hamdi","eminonu","Eminönü · 15 min a piedi",2,"pranzo cena",["carne"],"Kebab al pistacchio con terrazza sul Corno d'Oro. 25–40 € a testa.","Prenotate la vetrata",0],
+ ["Çiya Sofrası","asia","Kadıköy · traghetto",2,"pranzo cena",["casa"],"Cucina anatolica regionale, menu del giorno. 10–20 € a testa.","",0],
+ ["Çıkmaz Meyhane","asia","Kadıköy · traghetto",2,"cena",["meze","carne"],"Meyhane da 20 posti, frattaglie alla brace.","Prenotate in settimana",0],
+ ["Zübeyir Ocakbaşı","galata","Beyoğlu · 35 min",2,"cena",["carne"],"Griglia a carbone al centro della sala. 20–35 € a testa.","Prenotazione necessaria",0],
+ ["Karaköy Lokantası","galata","Karaköy · tram 15 min",2,"pranzo cena",["meze","casa"],"Bib Gourmand: lokanta a pranzo, meyhane la sera. 30–40 € a testa.","Prenotate per la cena",0],
+ ["Agora Meyhanesi 1890","balat","Balat · taxi 15 min",3,"cena",["meze"],"Meyhane storica con circa 60 meze e pesce. 35–50 € a testa.","Prenotate la sera",0],
+ ["Matbah","eminonu","Sultanahmet · 13 min a piedi",3,"cena",["casa"],"Cucina della corte ottomana. 30–45 € a testa.","Prenotate la cena",0],
+ ["Neolokal","galata","Karaköy · tram 15 min",4,"cena",["casa","meze"],"1 stella Michelin. Menu degustazione circa 170 € a testa.","Chiuso domenica e lunedì · prenotate 2 settimane prima",0],
+ ["Mikla","galata","Beyoğlu · taxi 20 min",4,"cena",["carne","casa"],"1 stella Michelin, terrazza al tramonto. Circa 210 € a testa.","Prenotate 3 settimane prima",0]
+];
+var SWEET={hotel:["Vefa Bozacısı","Vefa · 12 min a piedi","Boza, bevanda di miglio fermentato, dal 1876."],eminonu:["Hafız Mustafa 1864","Sirkeci · 15 min","Baklava, lokum e su böreği."],galata:["Karaköy Güllüoğlu","Karaköy · tram 15 min","Per molti la baklava migliore di Istanbul."],asia:["Pasticcerie del mercato di Kadıköy","Kadıköy","Un vassoio di baklava misto."],balat:["Caffè turco da Mandabatmaz","Beyoğlu","Caffè densissimo in un vicolo di İstiklal. Solo contanti."],ortakoy:["Karaköy Güllüoğlu","Karaköy · sulla via del ritorno","La baklava di riferimento."]};
+var PR={1:"€",2:"€€",3:"€€€",4:"€€€ Michelin"};
+/* =================== BOTTEGHE =================== */
+/* [nome, categoria, zona, giorno, cosa, avviso, scheda] */
+var B=[
+ ["Ali Muhiddin Hacı Bekir","dolci","Eminönü · 15 min","Giovedì, vicino al Bazar delle Spezie","Il lokum dal 1777.","","La famiglia Hacı Bekir produce lokum dal 1777 ed è tra le botteghe che hanno reso famoso questo dolce. Da provare quelli alla rosa e al pistacchio, e le caramelle dure akide. Si trova in Hamidiye Caddesi, a pochi passi dal Bazar delle Spezie."],
+ ["Altan Şekerleme","dolci","Küçükpazar, Eminönü · 15 min","Giovedì","Lokum e tahin helva dal 1865, prezzi da local.","Probabilmente chiuso la domenica","Una bottega di dolciumi aperta nel 1865 e gestita dalla stessa famiglia da quattro generazioni. Lokum alla rosa, caramelle alla cannella e helva di tahina, a prezzi tra i più bassi della città. È nel quartiere di Küçükpazar, dove fanno la spesa i local."],
+ ["Kurukahveci Mehmet Efendi","caffe","Eminönü · 15 min","Giovedì o domenica mattina","Caffè turco macinato al momento.","","La torrefazione storica del caffè turco, all'angolo del Bazar delle Spezie, dove si fa la coda per il caffè appena macinato in sacchetti di carta. Qui si trova anche il cezve, il bricco per prepararlo a casa."],
+ ["Ucuzcular Baharat","caffe","Bazar delle Spezie n. 51","Giovedì o domenica mattina","Spezie dal 1886.","Aperto anche la domenica","Un banco di spezie dal 1886, gestito dalla stessa famiglia da cinque generazioni, dentro il Bazar delle Spezie. Da comprare il sumac, il peperoncino in fiocchi pul biber e le miscele della casa. Lo frequentano gli istanbulioti, non solo i turisti."],
+ ["Jennifer's Hamam","tessili","Arasta Bazaar · 13 min","Lunedì sera","Teli da hammam tessuti a mano.","Prezzo fisso","Teli da hammam, accappatoi e scialli tessuti a mano in cotone biologico in villaggi anatolici. I prezzi sono fissi, quindi niente trattativa. È nell'Arasta Bazaar, aperto tutti i giorni fino a sera."],
+ ["Eğin Tekstil","tessili","Gran Bazar · 7 min","Martedì","Teli da hammam di qualità.","Chiuso la domenica","Una bottega storica del Gran Bazar, vicino alla porta Örücüler, per teli da hammam di qualità a prezzi onesti."],
+ ["Dhoku","tessili","Gran Bazar · 8 min","Martedì","Tappeti contemporanei.","Prezzo fisso · spedizione possibile","Tappeti dal disegno contemporaneo, geometrici e dai toni terrosi, tessuti con lana anatolica. Proprio di fronte c'è il negozio gemello Ethnicon, con patchwork di kilim d'epoca. Prezzi fissi e spedizione a casa."],
+ ["Iznik Classics","artigiani","Sultanahmet e Gran Bazar","Martedì","Ceramiche di Iznik dipinte a mano.","","Ceramiche dipinte a mano nello stile di Iznik: piatti, piastrelle e pannelli. Sono pezzi da collezione, non souvenir: si riconoscono dalle piccole imperfezioni del pennello."],
+ ["Kalcılar Han","artigiani","Accanto al Gran Bazar · 7 min","Martedì","Argentieri al lavoro.","Chiuso la domenica","Un vecchio han dove gli argentieri lavorano davanti a voi: si compra direttamente da chi fa il pezzo, senza intermediari."],
+ ["Ramai intorno al Gran Bazar","artigiani","Vicoli verso Kazım Özalp Cad.","Martedì","Vassoi, cezve e pentole di rame.","","Nei vicoli a ovest del Gran Bazar lavorano ancora i ramai: vassoi, cezve per il caffè e pentole vendute direttamente in bottega."],
+ ["Sahaflar Çarşısı","antico","Beyazıt · 5 min","Qualsiasi giorno","Il mercato dei libri.","","Il mercato dei libri usati, tra la moschea di Beyazıt e il Gran Bazar. Stampe ottomane, miniature, calligrafie e mappe antiche. È a cinque minuti dall'hotel."],
+ ["Çukurcuma","antico","Beyoğlu","Venerdì","Più di cento antiquari.","","Il quartiere degli antiquari: A la Turca per tappeti e tessuti ottomani, Günşiray per i pezzi architettonici. Ogni negozio ha il suo orario."],
+ ["Atelier Rebul","antico","Galataport","Venerdì","Colonia alla lavanda dal 1895.","","La farmacia Rebul nasce nel 1895 in İstiklal Caddesi. Oggi ha un negozio storico a Galataport: da portare a casa l'acqua di colonia alla lavanda."]
+];
+var BAZ=[
+ ["Gran Bazar","Chiuso la domenica · 5 min dall'hotel"],["Bazar delle Spezie","Aperto anche la domenica · Eminönü"],["Arasta Bazaar","Aperto tutti i giorni · Sultanahmet"],["Cortile del Büyük Valide Han","Dentro il quartiere del bazar"],["Sahaflar, il mercato dei libri","Accanto all'hotel"],["Mercato di Kadıköy","Lato asiatico, tutti i giorni"]
+];
+var LABS=[["Pittura su ceramica di Iznik","Medrese della Piccola Santa Sofia","Circa 1 ora e mezza. Chiedete se cottura e spedizione sono incluse.","41–59 $ a persona"],["Ebru, la carta marmorizzata","Laboratorio privato","Due ore per dipingere sull'acqua.","circa 60 € a persona"],["Caffè turco sulla sabbia","Galata o Eminönü","Un'ora e mezza tra cezve, sabbia calda e lettura dei fondi.","27–34 $ a persona"]];
+var SITE={"Kurukahveci Mehmet Efendi":"https://www.mehmetefendi.com","Jennifer's Hamam":"https://www.jennifershamam.com","Dhoku":"https://www.dhoku.com","Iznik Classics":"https://www.iznikclassics.com"};
+B.forEach(function(b){INFO[b[0]]=b[6]});
+
+/* =================== SCHEDA: testo, audioguida, video, mappa =================== */
+var sheet=$("#sheet"),speaking=false;
+function stopSpeak(){try{if(window.speechSynthesis)speechSynthesis.cancel()}catch(e){}speaking=false;var b=$("#shSpeak");if(b)b.textContent="Ascolta l'audioguida"}
+function openSheet(name,sub){
+  var txt=INFO[name]||"";var q=encodeURIComponent(name.replace(/ al tramonto| con l'Harem|, il mercato dei libri/g,"")+" Istanbul");
+  var canSpeak=!!window.speechSynthesis;
+  $("#shIn").innerHTML='<button type="button" class="x" id="shClose" aria-label="Chiudi">✕</button><div class="grab" aria-hidden="true"></div>'+(PHOTO[name]?'<img class="simg" src="'+imgFor(name)+'" alt="" onerror="this.remove()">'+(credit(name)?'<p class="scr">'+esc(credit(name))+'</p>':''):'')+'<p class="eyebrow">'+esc(sub||"Da scoprire")+'</p><h3 id="shTitle">'+esc(name)+'</h3><div class="txt"><p>'+esc(txt)+'</p></div>'+
+   '<div class="acts">'+(canSpeak?'<button type="button" class="btn" id="shSpeak">Ascolta l\'audioguida</button>':'')+
+   '<a class="btn quiet" href="https://www.youtube.com/results?search_query='+q+'" target="_blank" rel="noopener">Guarda un video su YouTube</a>'+
+   '<a class="btn quiet" href="https://www.google.com/maps/search/?api=1&query='+q+'" target="_blank" rel="noopener">Foto e recensioni su Google Maps</a>'+
+   '<a class="btn quiet" href="https://www.tripadvisor.it/Search?q='+q+'" target="_blank" rel="noopener">Recensioni su TripAdvisor</a>'+
+   (SITE[name]?'<a class="btn quiet" href="'+SITE[name]+'" target="_blank" rel="noopener">Sito ufficiale</a>':'')+'</div>';
+  $("#shClose").onclick=function(){sheet.close()};
+  var sp=$("#shSpeak");if(sp)sp.onclick=function(){
+    if(speaking){stopSpeak();return}
+    try{var u=new SpeechSynthesisUtterance(name+". "+txt);u.lang="it-IT";u.rate=1;var v=speechSynthesis.getVoices().filter(function(x){return /^it/i.test(x.lang)})[0];if(v)u.voice=v;
+      u.onend=stopSpeak;speechSynthesis.cancel();speechSynthesis.speak(u);speaking=true;sp.textContent="Ferma l'audioguida"}catch(e){}
+  };
+  if(sheet.showModal)sheet.showModal();else sheet.setAttribute("open","");
+  if(G)gsap.from(sheet,{y:80,duration:.4,ease:"power3.out"});
+}
+sheet.addEventListener("close",stopSpeak);
+sheet.addEventListener("click",function(e){if(e.target===sheet)sheet.close()});
+
+/* =================== PAGINE =================== */
+var app=$("#app");
+var TILES='<svg class="tiles" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><pattern id="iz" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M40 4 C52 22 58 28 76 40 C58 52 52 58 40 76 C28 58 22 52 4 40 C22 28 28 22 40 4Z" fill="none" stroke="#fff3dc" stroke-width="3"/><circle cx="40" cy="40" r="7" fill="#ffc626"/><circle cx="0" cy="0" r="5" fill="#ff9fd0"/><circle cx="80" cy="0" r="5" fill="#ff9fd0"/><circle cx="0" cy="80" r="5" fill="#ff9fd0"/><circle cx="80" cy="80" r="5" fill="#ff9fd0"/></pattern></defs><rect width="400" height="400" fill="url(#iz)"/></svg>';
+function pageHTML(st){
+  var id=st.id;
+  if(id==="splash")return '<section class="page splash" data-id="splash">'+TILES+'<div class="col"><p class="who">GIOVANNI &amp; VALENTINA</p><h1 aria-label="Istanbul" class="ttl">Istanbul</h1><p class="when">15 → 21 marzo 2027</p><button type="button" class="btn enter wobble" data-next>Entra</button></div></section>';
+  if(id==="grazie")return '<section class="page splash thanks" data-id="grazie">'+TILES.replace(/#iz\)/,"#iz2)").replace('id="iz"','id="iz2"')+'<div class="col"><p class="who">GIOVANNI &amp; VALENTINA · ISTANBUL</p><h2 class="ttl bye">İyi yolculuklar!</h2><p class="when">Buon viaggio, in turco.</p><p class="lede" style="margin:0 auto">Ci vediamo il 15 marzo sul volo TK1394.</p><button type="button" class="btn enter" id="toGuide">Torna alla guida</button><button type="button" class="btn quiet" id="toStart" style="color:var(--paper);border-color:var(--paper)">Ricomincia da capo</button></div></section>';
+  if(id==="welcome")return '<section class="page t-paper" data-id="welcome"><div class="col"><p class="eyebrow">Benvenuti a bordo</p><p class="names ttl">Giovanni <em>&amp;</em> Valentina</p><p class="lede">Sei notti a Istanbul, dal 15 al 21 marzo. Il volo e il budget sono già decisi: tutto il resto lo scegliete voi, una domanda alla volta.</p>'+
+    '<div class="ticket"><div class="legs"><div class="leg"><div class="city">CTA<small>LUN 15 · 09:35</small></div><div class="md">TK1394<i></i>2 h 30</div><div class="city r">IST<small>14:05</small></div></div><div class="leg"><div class="city">IST<small>DOM 21 · 17:45</small></div><div class="md">TK1395<i></i>2 h 25</div><div class="city r">CTA<small>18:10</small></div></div></div><div class="stub">TURKISH AIRLINES</div></div>'+
+    '<p class="facts"><span>Volo diretto</span><span>2 valigie da 30 kg</span><span>Budget 1100 €</span></p><p class="soft">Orari locali: a marzo Istanbul è due ore avanti. Fanno 10–14 °C e piove spesso.</p>'+
+    '<div class="foot"><button type="button" class="btn wide" data-next>Iniziamo</button></div></div></section>';
+  if(st.cover)return '<section class="page center cover '+THEME[st.ch]+'" data-id="'+id+'"><div class="col"><p class="num-big">'+st.cover[0]+'</p><h2 class="ttl">'+st.cover[1]+'</h2><p class="lede">'+st.cover[2]+'</p><div class="foot"><button type="button" class="btn wide" data-next>Via</button></div></div></section>';
+  if(st.q){var q=Q[id],theme=THEME[q.ch];
+    var opts=q.multi?('<div class="chips" data-multi="'+id+'">'+q.o.map(function(o){return '<button type="button" class="chip" data-v="'+o[0]+'" aria-pressed="false">'+o[1]+'</button>'}).join("")+'</div>'):('<div class="opts'+(q.o.length===2?" two":"")+'">'+q.o.map(function(o){return '<button type="button" class="opt" data-q="'+id+'" data-v="'+o[0]+'" aria-pressed="false"><b>'+o[1]+'</b><span>'+o[2]+'</span></button>'}).join("")+'</div>');
+    return '<section class="page center '+theme+'" data-id="'+id+'"><div class="col"><div class="qwrap"><p class="eyebrow">'+CH[q.ch]+'</p><h2 class="ttl">'+q.q+'</h2>'+(q.hint?'<p class="soft">'+q.hint+'</p>':'')+opts+'</div>'+(q.multi?'<div class="foot"><button type="button" class="btn wide" data-next>Avanti</button></div>':'')+'</div></section>';}
+  return '<section class="page '+THEME[st.ch]+'" data-id="'+id+'"><div class="col'+(id==="duel"?" wide":"")+'" data-body></div></section>';
+}
+app.innerHTML=ALL.map(pageHTML).join("");
+function pageOf(id){return $('.page[data-id="'+id+'"]',app)}
+function syncAnswers(){
+  $$(".opt",app).forEach(function(b){b.setAttribute("aria-pressed",String(A[b.dataset.q]===b.dataset.v))});
+  $$("[data-multi]",app).forEach(function(g){var v=A[g.dataset.multi]||[];$$(".chip",g).forEach(function(c){c.setAttribute("aria-pressed",String(v.indexOf(c.dataset.v)>-1))})});
+}
+
+/* scheda hotel con frecce */
+function hotelCard(id){return '<article class="hotel" id="'+id+'"><div class="galwrap"><div class="gal" tabindex="0" aria-label="Foto delle camere"></div><button type="button" class="gnav prev" aria-label="Foto precedente">‹</button><button type="button" class="gnav next" aria-label="Foto successiva">›</button><div class="dots"></div></div><div class="body"><div class="head"><div><h3 data-name></h3><p class="where" data-where></p></div><span class="score" data-score></span></div><div class="seg" role="group" aria-label="Tipo di camera"></div><div class="offer"><span class="price num" data-price></span><span class="spec" data-spec></span></div><p data-line></p><p class="paid" data-paid></p></div></article>'}
+function fillHotel(c,h,room,main){
+  var H=HOTELS[h],R0=H.rooms[room];
+  $("[data-name]",c).textContent=H.name;$("[data-where]",c).textContent=H.where;$("[data-score]",c).textContent=H.score;
+  $(".seg",c).innerHTML=H.rooms.map(function(r,i){return '<button type="button" data-room="'+i+'" aria-pressed="'+(i===room)+'">'+r.lab+'</button>'}).join("");
+  $("[data-price]",c).textContent=R0.price+" €";$("[data-spec]",c).textContent=R0.spec;$("[data-line]",c).textContent=R0.line;$("[data-paid]",c).textContent=H.paid;
+  var gal=$(".gal",c);gal.innerHTML=R0.imgs.map(function(p){return '<img src="foto/'+p[0]+'.jpg" alt="'+esc(H.name+", "+p[1])+'" decoding="async">'}).join("");gal.scrollLeft=0;
+  $(".dots",c).innerHTML=R0.imgs.map(function(_,i){return '<i'+(i?'':' class="on"')+'></i>'}).join("");
+  function idx(){return Math.round(gal.scrollLeft/Math.max(1,gal.clientWidth))}
+  function sync(){var i=idx();$$(".dots i",c).forEach(function(d,k){d.classList.toggle("on",k===i)})}
+  gal.onscroll=function(){clearTimeout(gal._t);gal._t=setTimeout(sync,60)};
+  $(".gnav.prev",c).onclick=function(){var n=gal.children.length,i=(idx()-1+n)%n;gal.scrollTo({left:i*gal.clientWidth,behavior:REDUCE?"auto":"smooth"})};
+  $(".gnav.next",c).onclick=function(){var n=gal.children.length,i=(idx()+1)%n;gal.scrollTo({left:i*gal.clientWidth,behavior:REDUCE?"auto":"smooth"})};
+  $(".seg",c).onclick=function(e){var b=e.target.closest("button");if(!b)return;fillHotel(c,h,+b.dataset.room,main);if(G)gsap.from($("[data-price]",c),{scale:.6,rotate:-6,duration:.5,ease:"back.out(3)"})};
+  if(main)save("hotel",{h:h,room:room});
+}
+function boardHTML(){var S=[["Voto finale",9.5,8.5],["Staff",9.7,9.2],["Pulizia",9.5,8.7],["Comfort",9.5,8.7],["Colazione",8.8,9.4,"*"],["Posizione",9.5,9.7],["Wi-Fi",9.4,6.9]];function f(v){return v.toFixed(1).replace(".",",")}
+  return S.map(function(r){var e=r[1],a=r[2];return '<div class="srow"><span class="lab">'+r[0]+'</span><div class="bars"><div class="br e"><div class="tr"><div class="f" style="width:'+e*10+'%"></div></div><span class="v'+(e>a?" win":"")+'">'+f(e)+'</span></div><div class="br a"><div class="tr"><div class="f" style="width:'+a*10+'%"></div></div><span class="v'+(a>e?" win":"")+'">'+f(a)+(r[3]||"")+'</span></div></div></div>'}).join("")}
+function revHTML(k){var REV={E:[[1,"Camere bellissime e pulitissime, servizio impeccabile.","GRUPPO DI AMICHE · OTT 2026"],[1,"Tutto a piedi, camera spaziosa, colazione dolce e salata ottima.","CAMERA DELUXE · OTT 2026"],[0,"La zona intorno non è la più bella, anche se vicina al centro.","OTT 2026"],[0,"Defilato rispetto alle vie principali.","OTT 2026"]],A:[[1,"Nel cuore del centro storico, tutto a piedi. Staff gentilissimo.","2026"],[1,"Posizione ottima e tranquilla, vicina ai mezzi.","COPPIA · SET 2026"],[0,"Colazione sempre uguale, poca scelta di dolci.","CAMERA SUPERIOR · AGO 2026"],[0,"Un giorno una camera del gruppo non è stata pulita.","2026"],[0,"Bagno un po' piccolo.","2026"]]};
+  return REV[k].map(function(r){return '<p class="rv'+(r[0]?"":" bad")+'"><span>'+r[1]+'<small>'+r[2]+'</small></span></p>'}).join("")}
+
+function renderDuel(body){
+  body.innerHTML='<p class="eyebrow">I due finalisti</p><h2 class="mid ttl">Enderun o Aybar?</h2>'+
+   '<p class="duel-note">La scelta è solo tra questi due hotel, entrambi nel pacchetto Turkish con volo e colazione. Il quiz che segue serve a capire quale si adatta meglio a voi.</p>'+
+   '<div class="pair">'+hotelCard("dE")+hotelCard("dA")+'</div>'+
+   '<div class="foot"><button type="button" class="btn wide" data-next>Fate il quiz</button></div>';
+  fillHotel($("#dE",body),"E",0,false);fillHotel($("#dA",body),"A",1,false);
+}
+function renderHotelResult(body){
+  var w=hotelWinner(),H=HOTELS[w],o=w==="E"?"A":"E";
+  var why=["h1","h2","h3","h4","h5"].map(function(k){var v=A[k];if(!v)return "";return '<p'+(HW[k][v][0]===w?'':' class="minus"')+'>'+HWHY[v]+'</p>'}).join("");
+  body.innerHTML='<p class="eyebrow">Il più adatto a voi è</p><p class="verdict ttl">'+H.name+'!</p><div class="why">'+why+'</div>'+hotelCard("hCard")+
+   '<button type="button" class="btn quiet" id="showOther">Vuoi vedere anche '+HOTELS[o].name+'?</button><div id="otherBox" hidden>'+hotelCard("hCard2")+'</div>'+
+   '<div><details class="more"><summary>Le pagelle di Booking a confronto</summary><div class="inner"><p class="legend"><span><i style="background:var(--iznik)"></i>Enderun</span><span><i style="background:var(--tulip)"></i>Aybar</span></p>'+boardHTML()+'<p class="soft" style="margin-top:8px">Il 9,4 alla colazione di Aybar viene da soli 16 voti: nelle recensioni scritte è la critica più frequente.</p></div></details>'+
+   '<details class="more"><summary>Cosa dice chi c\'è stato</summary><div class="inner"><h3 style="font-size:24px">Enderun</h3>'+revHTML("E")+'<h3 style="font-size:24px;margin-top:16px">Aybar</h3>'+revHTML("A")+'</div></details></div>'+
+   '<div class="foot"><button type="button" class="btn wide" data-next>Avanti: i nostri giorni</button></div>';
+  var saved=load("hotel");fillHotel($("#hCard",body),w,(saved&&saved.h===w)?saved.room:(w==="E"?0:1),true);
+  fillHotel($("#hCard2",body),o,o==="E"?0:1,false);
+  $("#showOther",body).onclick=function(){var box=$("#otherBox",body);box.hidden=!box.hidden;this.textContent=box.hidden?"Vuoi vedere anche "+HOTELS[o].name+"?":"Nascondi "+HOTELS[o].name;if(!box.hidden){box.scrollIntoView({behavior:REDUCE?"auto":"smooth",block:"start"});if(G)gsap.from(box,{y:30,duration:.4,ease:"back.out(2)"})}};
+}
+function renderFine(body){
+  var hs=load("hotel"),w=hotelWinner(),H=HOTELS[hs?hs.h:w],room=H.rooms[hs?hs.room:(w==="E"?0:1)];
+  var pam=PAM(),ham=A.p5==="yes";
+  var dinners=[];mealPlan().forEach(function(d){d.meals.forEach(function(m){if(m[0]==="CENA")dinners.push(m[1][0])})});
+  var ints={storia:"storia",bazar:"bazar",vista:"panorami",local:"quartieri da local"};
+  var sp={pam:"Pamukkale in giornata",asia:"Il lato asiatico",both:"Pamukkale e lato asiatico"}[A.p2]||"";
+  var rows=[["HOTEL",H.name+" · "+room.lab+", "+room.spec],["RITMO",A.p1==="calm"?"Con calma":"A tutta"],["SPECIALE",sp],["INTERESSI",(A.p3||[]).map(function(k){return ints[k]}).join(", ")||"Un po' di tutto"],["SERATE",A.p6==="meyhane"?"Meze e rakı":"Tramonti e passeggiate"],["CENE",dinners.join(", ")]];
+  var pack=room.price,minP=pam?325:0,maxP=pam?800:0;
+  body.innerHTML='<p class="eyebrow">Il nostro viaggio</p><h2 class="mid ttl" style="color:var(--saffron)">Giovanni e Valentina a Istanbul.</h2>'+
+   '<div>'+rows.map(function(r){return '<p class="srec"><b>'+r[0]+'</b><span>'+esc(r[1])+'</span></p>'}).join("")+'</div>'+
+   '<div class="money"><p class="eyebrow">Il conto in due</p><div class="big num">'+(pam?(pack+minP)+"–"+(pack+maxP):pack)+' €</div><p class="row"><span>Pacchetto volo e hotel</span><span class="num">'+pack+' €</span></p>'+(pam?'<p class="row"><span>Pamukkale in giornata</span><span class="num">325–800 €</span></p>':'')+(ham?'<p class="row"><span>Hammam</span><span class="num">120–260 €</span></p>':'')+'<p class="row"><span>Budget di partenza</span><span class="num">1100 €</span></p><p class="soft" style="margin-top:8px">Esclusi pasti e ingressi a Istanbul.</p></div>'+
+   '<p class="soft">Prezzi Turkish Airlines Holidays e voti Booking del 15 ottobre 2026. Biglietti, orari e locali verificati a ottobre 2026: ricontrollateli a febbraio 2027.</p>'+
+   '<details class="more"><summary>Crediti delle foto</summary><div class="inner credits">'+Object.keys(CRED).map(function(k){var c=CRED[k];return '<p class="soft"><b>'+esc(c.title||k)+'</b> · '+esc(c.author)+' · <a href="'+esc(c.licenseUrl||"#")+'" target="_blank" rel="noopener">'+esc(c.license)+'</a> · <a href="'+esc(c.source)+'" target="_blank" rel="noopener">fonte</a> · ritagliata e ridimensionata</p>'}).join("")+'<p class="soft">Foto delle camere: Booking.com.</p></div></details>'+
+   '<div class="foot"><button type="button" class="btn wide" data-next>Avanti: i consigli</button><button type="button" class="btn quiet" id="restart">Rifai tutto da capo</button></div>';
+  $("#restart",body).onclick=function(){A={};save("answers",A);save("hotel",null);["pick","dishes","shops","swap"].forEach(function(k){save(k,null)});curDay=0;syncAnswers();goTo("welcome")};
+}
+function score(r,slot){var sty=A.f2||[],b=A.f1||"mid",s=0;
+  if(r[3]===4)return b==="special"?50:-99;
+  r[5].forEach(function(x){if(sty.indexOf(x)>-1)s+=3});
+  if(b==="low")s+=r[3]===1?4:r[3]===2?0:-8;else s+=r[3]===2?3:r[3]===1?2:r[3]===3?(slot==="cena"?1:-4):0;
+  if(A.p6==="meyhane"&&slot==="cena"&&r[5].indexOf("meze")>-1)s+=3;return s}
+/* =================== FOTO, CREDITI, ICONE =================== */
+var PHOTO={"Ippodromo e piazza Sultanahmet":"p_ippodromo","Piccola Santa Sofia":"p_piccola_sofia","Moschea di Sokollu Mehmed Paşa":"p_sokollu","Arasta Bazaar":"p_arasta","Santa Sofia":"p_santa_sofia","Moschea Blu":"p_moschea_blu","Cisterna Basilica":"p_cisterna","Cisterna di Şerefiye":"p_serefiye","Gran Bazar":"p_gran_bazar","Cortile del Büyük Valide Han":"p_valide_han","Sahaflar, il mercato dei libri":"p_sahaflar","Sahaflar Çarşısı":"p_sahaflar","Süleymaniye al tramonto":"p_suleymaniye","Acquedotto di Valente":"p_valente","Hierapolis e travertini":"p_hierapolis","Piscina antica":"p_piscina_antica","Tramonto sulle terrazze":"p_tramonto_terrazze","Traghetto per Üsküdar":"p_uskudar","Kuzguncuk":"p_kuzguncuk","Tramonto da Salacak":"p_salacak","Torre di Leandro":"p_leandro","Topkapı con l'Harem":"p_topkapi","Parco di Gülhane":"p_gulhane","Bazar delle Spezie":"p_spezie","Ultimi acquisti al Bazar delle Spezie":"p_spezie","Moschea di Rüstem Paşa":"p_rustem","Traghetto per Kadıköy":"p_traghetto","Mercato di Kadıköy":"p_kadikoy","Tramonto sul lungomare di Moda":"p_moda","Palazzo Dolmabahçe":"p_dolmabahce","Moschea di Ortaköy":"p_ortakoy","Crociera sul Bosforo":"p_crociera","Scalinata Camondo":"p_camondo","Torre di Galata":"p_galata","Çukurcuma":"p_cukurcuma","Hammam Kılıç Ali Paşa":"p_hammam","Balat e Fener":"p_balat","Chiesa bulgara di Santo Stefano":"p_santo_stefano","Chora (Kariye)":"p_chora","Fethiye (Pammakaristos)":"p_fethiye","Funivia di Pierre Loti":"p_pierre_loti",
+ "Havuzlu":"d_hunkar","Erzincanlı Ali Baba":"d_kuru_fasulye","Siirt Şeref Büryan":"d_buryan","Bahar":"d_kuru_fasulye","Tarihi Sultanahmet Köftecisi":"d_kofte","Hocapaşa Pidecisi":"d_pide","Şehzade Erzurum Cağ Kebabı":"d_cag_kebab","Balık ekmek a Eminönü":"d_balik_ekmek","Kumpir a Ortaköy":"d_kumpir","Dürümzade":"d_durum","Teras Restaurant":"p_hierapolis","Pandeli":"d_hunkar","Hamdi":"d_kebab","Çiya Sofrası":"d_meze","Çıkmaz Meyhane":"d_meze","Zübeyir Ocakbaşı":"d_kebab","Karaköy Lokantası":"d_meze","Agora Meyhanesi 1890":"d_meze","Matbah":"d_hunkar","Neolokal":"d_meze","Mikla":"d_kebab","Van Kahvaltı Evi":"d_kahvalti","Vefa Bozacısı":"d_boza","Hafız Mustafa 1864":"d_baklava","Karaköy Güllüoğlu":"d_baklava","Pasticcerie del mercato di Kadıköy":"d_baklava","Caffè turco da Mandabatmaz":"d_kahve",
+ "Ali Muhiddin Hacı Bekir":"s_lokum","Altan Şekerleme":"s_lokum","Kurukahveci Mehmet Efendi":"d_kahve","Ucuzcular Baharat":"s_spezie","Jennifer's Hamam":"s_teli","Eğin Tekstil":"s_teli","Dhoku":"s_tappeti","Iznik Classics":"s_ceramiche","Kalcılar Han":"s_argento","Ramai intorno al Gran Bazar":"s_rame","Atelier Rebul":"s_colonia"};
+var DISHPHOTO=true;
+var CRED={};
+try{fetch("foto/card/credits.json").then(function(r){return r.ok?r.json():[]}).then(function(list){(list||[]).forEach(function(c){CRED[c.id]=c})}).catch(function(){})}catch(e){}
+function imgFor(key){var id=PHOTO[key]||key;return id?"foto/card/"+id+".jpg":""}
+function credit(key){var c=CRED[PHOTO[key]||key];return c?("Foto: "+c.author+" · "+c.license):""}
+function photoTag(key,cls){var src=imgFor(key);return '<img class="'+(cls||"")+'" src="'+src+'" alt="" loading="lazy" decoding="async" onerror="this.classList.add(\'noimg\')">'}
+var ICO={
+ plane:'<svg viewBox="0 0 24 24"><path d="M2 13l9-2 4-8 2 1-2 8 7 2-1 2-7-1-3 6-2-1 1-6-8 1z" fill="currentColor"/></svg>',
+ car:'<svg viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4h-2a2 2 0 01-4 0H10a2 2 0 01-4 0z" fill="currentColor"/></svg>',
+ ticket:'<svg viewBox="0 0 24 24"><path d="M3 7h18v3a2 2 0 000 4v3H3v-3a2 2 0 000-4z" fill="currentColor"/></svg>',
+ walk:'<svg viewBox="0 0 24 24"><circle cx="13" cy="4" r="2" fill="currentColor"/><path d="M11 8l-3 13h2l2-7 2 2v5h2v-6l-2-3 1-3 2 2h3v-2h-2l-3-3z" fill="currentColor"/></svg>',
+ fork:'<svg viewBox="0 0 24 24"><path d="M7 2v9a2 2 0 002 2v9h2v-9a2 2 0 002-2V2h-1.5v6h-1V2h-1v6h-1V2zM17 2c-2 0-3 3-3 6v5h2v9h2V2z" fill="currentColor"/></svg>',
+ bed:'<svg viewBox="0 0 24 24"><path d="M2 18V6h2v7h7V8h7a4 4 0 014 4v6h-2v-2H4v2z" fill="currentColor"/></svg>',
+ pin:'<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9a2 2 0 110-4 2 2 0 010 4z" fill="currentColor"/></svg>'
+};
+function links(name,site){var q=encodeURIComponent(name+" Istanbul");return '<span class="lnk"><a href="https://www.google.com/maps/search/?api=1&query='+q+'" target="_blank" rel="noopener">Google</a><a href="https://www.tripadvisor.it/Search?q='+q+'" target="_blank" rel="noopener">TripAdvisor</a>'+(site?'<a href="'+site+'" target="_blank" rel="noopener">Sito</a>':'')+'</span>'}
+
+/* =================== MAZZO «MATCH» =================== */
+/* items: [{key,title,sub,chip,chipCls,cost}] · onDone(likedKeys) */
+var hasDrag=!!(window.Draggable&&window.gsap);if(hasDrag){try{gsap.registerPlugin(Draggable);if(window.InertiaPlugin)gsap.registerPlugin(InertiaPlugin)}catch(e){hasDrag=false}}
+function deck(box,items,onDone,labels){
+  labels=labels||{no:"Salta",yes:"Mi piace"};
+  var i=0,liked=[];
+  box.innerHTML='<div class="deck"><div class="stack"></div><p class="dcount num" aria-live="polite"></p><div class="dbtns"><button type="button" class="dbtn no" aria-label="'+labels.no+'">✕</button><button type="button" class="dbtn info" aria-label="Scopri di più">i</button><button type="button" class="dbtn yes" aria-label="'+labels.yes+'">♥</button></div><p class="dhint">Scorrete la carta o usate i tasti</p></div>';
+  var stack=$(".stack",box),cnt=$(".dcount",box);
+  function card(it,top){return '<article class="card'+(top?' top':'')+'" tabindex="'+(top?0:-1)+'" aria-label="'+esc(it.title)+'">'+photoTag(it.key)+'<span class="stamp like">SÌ</span><span class="stamp nope">NO</span><div class="ov">'+(it.chip?'<span class="tag '+(it.chipCls||'')+'">'+it.chip+'</span>':'')+'<h3>'+it.title+'</h3>'+(it.sub?'<p>'+it.sub+'</p>':'')+(it.cost?'<p class="cost">'+it.cost+'</p>':'')+'</div><small class="cr">'+esc(credit(it.key))+'</small></article>'}
+  function render(){
+    if(i>=items.length){onDone(liked);return}
+    stack.innerHTML=(items[i+1]?card(items[i+1],false):'')+card(items[i],true);
+    cnt.textContent=(i+1)+" di "+items.length+" · "+liked.length+" ♥";
+    var c=$(".card.top",stack);
+    if(hasDrag&&!REDUCE){Draggable.create(c,{type:"x",onDrag:function(){gsap.set(c,{rotation:this.x/18});c.classList.toggle("l",this.x>60);c.classList.toggle("n",this.x<-60)},onRelease:function(){if(Math.abs(this.x)>110)decide(this.x>0);else{gsap.to(c,{x:0,rotation:0,duration:.3,ease:"back.out(2)"});c.classList.remove("l","n")}}})}
+    c.addEventListener("keydown",function(e){if(e.key==="ArrowRight")decide(true);if(e.key==="ArrowLeft")decide(false)});
+  }
+  function decide(yes){
+    var it=items[i],c=$(".card.top",stack);if(!it||!c)return;
+    if(yes)liked.push(it.key);
+    var done=function(){i++;render()};
+    if(G){c.classList.add(yes?"l":"n");gsap.to(c,{x:yes?520:-520,rotation:yes?24:-24,opacity:0,duration:.35,ease:"power2.in",onComplete:done})}else done();
+  }
+  $(".dbtn.yes",box).onclick=function(){decide(true)};
+  $(".dbtn.no",box).onclick=function(){decide(false)};
+  $(".dbtn.info",box).onclick=function(){var it=items[i];if(it)openSheet(it.key,it.chip||"")};
+  render();
+}
+
+/* =================== GIORNI: match + nastro =================== */
+var curDay=0;
+function dayKey(x){return x.d+"|"+x.t}
+function renderGiorni(body){
+  var D=planDays();if(curDay>=D.length)curDay=0;
+  var sp={pam:"con Pamukkale",asia:"con il lato asiatico",both:"Pamukkale e lato asiatico"}[A.p2]||"";
+  body.innerHTML='<p class="eyebrow">La vostra guida · '+(A.p1==="calm"?"con calma":"a tutta")+' · '+sp+'</p><h2 class="mid ttl">Sette giorni su misura.</h2>'+
+   '<div class="days" role="group" aria-label="Scegli il giorno">'+D.map(function(x,i){var ok=!!(load("pick")||{})[dayKey(x)];return '<button type="button" data-day="'+i+'" aria-pressed="'+(i===curDay)+'"'+(x.pam?' class="sp"':'')+'>'+x.d+'<b>'+(x.pam?"Pamukkale":"Giorno "+(i+1))+(ok?' ✓':'')+'</b></button>'}).join("")+'</div>'+
+   '<div id="dayView"></div><div class="foot"><button type="button" class="btn wide" data-next>'+(PAM()?'Avanti: Pamukkale':'Avanti: a tavola')+'</button></div>';
+  showDay(body,curDay);
+  $(".days",body).onclick=function(e){var b=e.target.closest("button");if(!b)return;curDay=+b.dataset.day;$$(".days button",body).forEach(function(x){x.setAttribute("aria-pressed",String(x===b))});showDay(body,curDay)};
+}
+function showDay(body,i){
+  var x=planDays()[i],st=dayStops(x),picks=load("pick")||{},key=dayKey(x),view=$("#dayView",body);
+  var head='<div class="dhead"><div><p class="eyebrow">'+x.d+' marzo</p><h3 class="dtitle">'+x.t+'</h3></div><button type="button" class="fact-btn" aria-label="Lo sapevi?">?</button></div>'+(x.note?'<p class="pill-warn">'+x.note+'</p>':'');
+  var choosable=st.filter(function(s){return s[0]!=="go"});
+  if(!picks[key]&&choosable.length>1){
+    view.innerHTML=head+'<p class="soft">♥ ci andiamo · ✕ saltiamo</p><div id="dk"></div><button type="button" class="btn quiet" id="keepAll">Teniamo tutto</button>';
+    deck($("#dk",view),choosable.map(function(s){return {key:s[1],title:s[1],sub:s[2],chip:TL[s[0]],chipCls:s[0],cost:s[3]}}),function(liked){picks[key]=liked;save("pick",picks);boom(60,.7);renderGiorni(body)},{no:"Saltiamo",yes:"Ci andiamo"});
+    $("#keepAll",view).onclick=function(){picks[key]=choosable.map(function(s){return s[1]});save("pick",picks);renderGiorni(body)};
+  }else{
+    var keep=picks[key]||choosable.map(function(s){return s[1]});
+    var list=st.filter(function(s){return s[0]==="go"||keep.indexOf(s[1])>-1});
+    var meals=(mealPlan().filter(function(d){return d.d===x.d})[0]||{meals:[]}).meals;
+    var lunch=meals.filter(function(m){return m[0]==="PRANZO"})[0],dinner=meals.filter(function(m){return m[0]==="CENA"})[0];
+    var rowsH=[],half=Math.ceil(list.length/2);
+    list.forEach(function(s,k){
+      if(k===half&&lunch)rowsH.push(mealPin(lunch));
+      if(s[0]==="go")rowsH.push('<div class="nrow go"><span class="nic">'+ICO.car+'</span><span class="nt"><b>'+s[1]+'</b></span></div>');
+      else rowsH.push('<button type="button" class="nrow" data-info="'+esc(s[1])+'">'+photoTag(s[1],"thumb")+'<span class="nt"><b>'+s[1]+'</b><span class="chips"><span class="tag '+s[0]+'">'+TL[s[0]]+'</span>'+(s[3]?'<span class="cchip">'+s[3].replace(" a persona","")+'</span>':'')+'</span></span><span class="go-i" aria-hidden="true">›</span></button>');
+    });
+    if(dinner)rowsH.push(mealPin(dinner));
+    view.innerHTML=head+'<div class="nastro">'+rowsH.join("")+'</div><button type="button" class="btn quiet" id="redo">Rifate le scelte del giorno</button>';
+    $("#redo",view).onclick=function(){delete picks[key];save("pick",picks);showDay(body,i)};
+    if(G)gsap.from($$(".nrow",view),{x:-20,opacity:0,duration:.35,stagger:.05,ease:"back.out(2)"});
+  }
+  $(".fact-btn",view).onclick=function(){openFact(x.f,x.t)};
+}
+function mealPin(m){var r=m[1];return '<button type="button" class="nrow meal-pin" data-info="'+esc(r[0])+'"><span class="nic">'+ICO.fork+'</span><span class="nt"><b>'+(m[0]==="PRANZO"?"Pranzo":"Cena")+' · '+r[0]+'</b><span class="chips"><span class="cchip">'+(PR[r[3]]||"")+'</span></span></span><span class="go-i" aria-hidden="true">›</span></button>'}
+function openFact(f,t){$("#shIn").innerHTML='<button type="button" class="x" id="shClose" aria-label="Chiudi">✕</button><p class="eyebrow">Lo sapevi?</p><h3 id="shTitle">'+esc(t)+'</h3><p class="big-fact">'+esc(f)+'</p>';$("#shClose").onclick=function(){sheet.close()};if(sheet.showModal)sheet.showModal();else sheet.setAttribute("open","")}
+
+/* =================== TAVOLA =================== */
+function renderTavola(body){
+  var plan=mealPlan(),b={low:"come i local",special:"con una serata speciale"}[A.f1]||"giusto";
+  body.innerHTML='<p class="eyebrow">Dove mangiamo · budget '+b+'</p><h2 class="mid ttl">Ogni giorno, vicino a dove sarete.</h2><p class="soft">Toccate una carta per foto, recensioni e link. ↻ propone un\'alternativa.</p>'+
+   plan.map(function(d,di){return '<div class="mday"><p class="eyebrow">'+d.d+' · '+d.t+'</p>'+(d.meals.length?'<div class="mrow">'+d.meals.map(function(m,mi){var r=m[1];return '<div class="mcard"><button type="button" class="mtap" data-info="'+esc(r[0])+'">'+photoTag(r[0])+'<span class="mlab">'+m[0].toLowerCase()+'</span><span class="mbody"><b>'+r[0]+'</b><span>'+(PR[r[3]]||"☕")+'</span>'+(r[7]?'<span class="mwarn" title="'+esc(r[7])+'">!</span>':'')+'</span></button>'+((m[0]==="PRANZO"||m[0]==="CENA")?'<button type="button" class="swap" data-swap="'+esc(d.d+"|"+m[0])+'" aria-label="Proponi un altro posto">↻</button>':'')+'</div>'}).join("")+'</div>':'<p class="soft">Giornata di viaggio: si mangia al volo.</p>')+'</div>'}).join("")+
+   '<div class="foot"><button type="button" class="btn wide" data-next>Avanti: i piatti</button></div>';
+  body.onclick=function(e){var s=e.target.closest("[data-swap]");if(!s)return;var ov=load("swap")||{};ov[s.dataset.swap]=(ov[s.dataset.swap]||0)+1;save("swap",ov);renderTavola(body)};
+}
+/* classifica dei candidati e scelta con le alternative chieste */
+function ranked(zones,slot,day){var out=[];zones.forEach(function(z,zi){R.forEach(function(r){if(r[1]!==z||r[4].indexOf(slot)<0)return;if(day.indexOf("Dom")===0&&r[8])return;if(r[3]===4&&day.indexOf("Sab")!==0&&day.indexOf("Ven")!==0)return;out.push([score(r,slot)-zi*2,r])})});out.sort(function(a,b){return b[0]-a[0]});return out.map(function(x){return x[1]})}
+function mealPlan(){var used=[],out=[],star=false,ov=load("swap")||{};
+  planDays().forEach(function(x){var day={d:x.d,t:x.t,meals:[]};
+    if(x.breakfast)day.meals.push(["COLAZIONE",["Van Kahvaltı Evi","galata","Cihangir · 30 min",1,"",[],"Colazione di Van da condividere. 10–15 € a testa.","Fila la domenica dalle 10: arrivate presto"]]);
+    [["PRANZO","pranzo",x.lunch],["CENA","cena",x.dinner]].forEach(function(sl){if(!sl[2])return;
+      var c=ranked(sl[2],sl[1],x.d).filter(function(r){return used.indexOf(r[0])<0&&!(r[3]===4&&star)});if(!c.length)return;
+      var k=(ov[x.d+"|"+sl[0]]||0)%c.length,r=c[k];used.push(r[0]);if(r[3]===4)star=true;day.meals.push([sl[0],r])});
+    if(A.f3==="yes"){var z=(x.dinner||x.lunch||["hotel"])[0];var sw=SWEET[z];if(sw)day.meals.push(["DOLCE",[sw[0],z,sw[1],0,"",[],sw[2],""]])}
+    out.push(day)});return out}
+
+/* =================== PIATTI: «Assaggio o no?» =================== */
+var DISHES=[["d_kuru_fasulye","Kuru fasulye","Fagioli bianchi in umido con pilav"],["d_buryan","Büryan","Agnello cotto nel pozzo"],["d_pide","Pide","Barchetta di pane con carne o formaggio"],["d_kofte","Köfte","Polpette alla griglia"],["d_balik_ekmek","Balık ekmek","Panino con lo sgombro"],["d_hunkar","Hünkâr beğendi","Agnello su crema di melanzane"],["d_meze","Meze ve rakı","Antipasti e anice"],["d_kebab","Adana kebap","Spiedo di carne piccante"],["d_cag_kebab","Cağ kebabı","Agnello allo spiedo orizzontale"],["d_kumpir","Kumpir","Patata gigante ripiena"],["d_kunefe","Künefe","Dolce caldo con formaggio filante"],["d_baklava","Baklava","Sfoglia al pistacchio"],["d_boza","Boza","Bevanda di miglio fermentato"],["d_kahve","Türk kahvesi","Caffè turco"]];
+DISHES.forEach(function(d){INFO[d[1]]=d[2]+".";PHOTO[d[1]]=d[0]});
+function renderPiatti(body){
+  var saved=load("dishes");
+  if(!saved){
+    body.innerHTML='<p class="eyebrow">A tavola</p><h2 class="mid ttl">Assaggio o no?</h2><p class="soft">♥ lo ordiniamo · ✕ passo</p><div id="dk"></div>';
+    deck($("#dk",body),DISHES.map(function(d){return {key:d[1],title:d[1],sub:d[2]}}),function(l){save("dishes",l);boom(80,.7);renderPiatti(body)},{no:"Passo",yes:"Lo ordiniamo"});
+    return;
+  }
+  var L=DISHES.filter(function(d){return saved.indexOf(d[1])>-1});
+  body.innerHTML='<p class="eyebrow">Da ordinare</p><h2 class="mid ttl">'+(L.length?'La vostra lista per il cameriere.':'Nessun piatto scelto.')+'</h2>'+
+   '<div class="order">'+L.map(function(d){return '<div class="oitem">'+photoTag(d[1],"thumb")+'<span><b>'+d[1]+'</b><small>'+d[2]+'</small></span></div>'}).join("")+'</div>'+
+   '<button type="button" class="btn quiet" id="redoD">Rifate il mazzo</button><div class="foot"><button type="button" class="btn wide" data-next>Avanti: botteghe e bazar</button></div>';
+  $("#redoD",body).onclick=function(){save("dishes",null);renderPiatti(body)};
+}
+
+/* =================== BOTTEGHE =================== */
+function renderBotteghe(body){
+  var cats=A.s1&&A.s1.length?A.s1:["dolci","caffe","tessili","artigiani","antico"];
+  var L=B.filter(function(b){return cats.indexOf(b[1])>-1}),saved=load("shops");
+  var bazar='<h3>I bazar</h3><div class="hrow">'+BAZ.map(function(z){return '<button type="button" class="hcard" data-info="'+esc(z[0])+'">'+photoTag(z[0])+'<span><b>'+z[0]+'</b><small>'+z[1]+'</small></span></button>'}).join("")+'</div>';
+  var warn=(A.s1||[]).indexOf("falsi")>-1?'<details class="warnbox"><summary><span class="eyebrow">Avvertenza · a vostro rischio</span><b>Abbigliamento e borse contraffatti</b></summary><p>Si trovano soprattutto intorno al Gran Bazar e a Laleli. In Italia comprare un falso è un illecito anche per chi lo compra: sanzione da 100 a 7.000 € (art. 1, comma 7, decreto legge 35/2005). Alla dogana la merce può essere sequestrata, anche un solo capo. Qualità e materiali non sono garantiti.</p></details>':'';
+  var labs=A.s2==="yes"?'<h3>Il vostro laboratorio</h3><div class="hrow">'+LABS.map(function(l){return '<div class="hcard static"><span class="lab-ico">'+ICO.pin+'</span><span><b>'+l[0]+'</b><small>'+l[3]+'</small></span></div>'}).join("")+'</div>':'';
+  if(!saved&&L.length>1){
+    body.innerHTML='<p class="eyebrow">Botteghe e bazar</p><h2 class="mid ttl">Quali botteghe?</h2><p class="soft">♥ ci passiamo · ✕ saltiamo</p><div id="dk"></div>'+warn+bazar+labs;
+    deck($("#dk",body),L.map(function(b){return {key:b[0],title:b[0],sub:b[4],chip:b[3]}}),function(l){save("shops",l);boom(80,.7);renderBotteghe(body)},{no:"Saltiamo",yes:"Ci passiamo"});
+    return;
+  }
+  var K=L.filter(function(b){return !saved||saved.indexOf(b[0])>-1});
+  body.innerHTML='<p class="eyebrow">Botteghe e bazar</p><h2 class="mid ttl">Le vostre botteghe.</h2>'+warn+
+   '<div class="nastro">'+K.map(function(b){return '<div class="srow2"><button type="button" class="nrow" data-info="'+esc(b[0])+'">'+photoTag(b[0],"thumb")+'<span class="nt"><b>'+b[0]+'</b><span class="chips"><span class="cchip">'+b[3]+'</span>'+(b[5]?'<span class="cchip warnc">'+b[5].split(" · ")[0]+'</span>':'')+'</span></span><span class="go-i" aria-hidden="true">›</span></button>'+links(b[0],SITE[b[0]])+'</div>'}).join("")+'</div>'+
+   (saved?'<button type="button" class="btn quiet" id="redoS">Rifate il mazzo</button>':'')+bazar+labs+
+   '<div class="foot"><button type="button" class="btn wide" data-next>Il nostro viaggio</button></div>';
+  var rs=$("#redoS",body);if(rs)rs.onclick=function(){save("shops",null);renderBotteghe(body)};
+}
+
+/* =================== STORIE (consigli e lista) =================== */
+var storyEl=null;
+function stories(title,items,opts){
+  /* items: [{h,t,key?}] · opts:{start, onDone(i), check:{isDone(i),toggle(i)}} */
+  opts=opts||{};var i=opts.start||0,timer=null;
+  if(!storyEl){storyEl=document.createElement("div");storyEl.className="story";storyEl.setAttribute("role","dialog");storyEl.setAttribute("aria-modal","true");document.body.appendChild(storyEl)}
+  function close(){storyEl.hidden=true;document.body.style.overflow="";if(opts.onClose)opts.onClose()}
+  function show(){
+    if(i<0)i=0;if(i>=items.length){close();return}
+    var it=items[i];
+    storyEl.className="story st"+(i%4);
+    storyEl.innerHTML='<div class="sbars">'+items.map(function(_,k){return '<i class="'+(k<i?"full":k===i?"now":"")+'"></i>'}).join("")+'</div><div class="stop-row"><span class="eyebrow">'+esc(title)+' · '+(i+1)+' di '+items.length+'</span><button type="button" class="sx" aria-label="Chiudi">✕</button></div>'+
+     '<div class="sbody"><h3>'+it.h+'</h3><p>'+it.t+'</p></div>'+
+     (opts.check?'<div class="sacts"><button type="button" class="btn sdone">'+(opts.check.isDone(i)?'Fatto ✓':'Segna fatto')+'</button><button type="button" class="btn quiet slater">'+(i<items.length-1?'Dopo':'Chiudi')+'</button></div>':'<p class="stap">Tocca a destra per andare avanti</p>')+
+     '<button type="button" class="szone prev" aria-label="Precedente"></button><button type="button" class="szone next" aria-label="Successivo"></button>';
+    $(".sx",storyEl).onclick=close;
+    $(".szone.prev",storyEl).onclick=function(){i--;show()};
+    $(".szone.next",storyEl).onclick=function(){i++;show()};
+    if(opts.check){$(".sdone",storyEl).onclick=function(){if(!opts.check.isDone(i))opts.check.toggle(i);i++;show()};$(".slater",storyEl).onclick=function(){i++;show()}}
+    if(opts.onSeen)opts.onSeen(i);
+    if(G){gsap.from($(".sbody",storyEl),{y:30,opacity:0,duration:.4,ease:"back.out(2)"});var nb=$(".sbars .now",storyEl);if(nb)gsap.fromTo(nb,{"--p":0},{"--p":1,duration:.6})}
+  }
+  storyEl.hidden=false;document.body.style.overflow="hidden";show();
+  storyEl.onkeydown=function(e){if(e.key==="Escape")close();if(e.key==="ArrowRight"){i++;show()}if(e.key==="ArrowLeft"){i--;show()}};
+  setTimeout(function(){var b=$(".sx",storyEl);if(b)b.focus()},50);
+}
+var TIPS=[
+ ["Muoversi","t",[["Istanbulkart per due","Una carta, due passaggi al tornello. Tram, metro, traghetti."],["Il tram T1","Da Beyazıt a Sultanahmet, Eminönü e Karaköy."],["Traghetti","Il Bosforo al prezzo di una corsa."],["Taxi con l'app","BiTaksi o Uber, sempre con tassametro."],["Dall'aeroporto","Havaist circa 8 €, 60–90 minuti."]]],
+ ["Soldi","s",[["Pagate in lire","Al POS scegliete lire, mai euro."],["Contanti per i piccoli","Bazar e lokanta. La Cisterna solo carta."],["Bancomat di banca","Ziraat, İş Bankası, Garanti."],["Mance","5–10% se non è già nel conto."]]],
+ ["Moschee","m",[["Come vestirsi","Spalle e ginocchia coperte, foulard per Valentina."],["Preghiera","Chiuse 30–90 minuti. Venerdì 12:30–14:30."],["Santa Sofia","Ingresso est, solo galleria, 25 €."],["Giorni di chiusura","Topkapı martedì, Dolmabahçe lunedì, Chora venerdì, Gran Bazar domenica."],["Museum Pass","Non conviene per questo programma."]]],
+ ["Truffe","f",[["Il lustrascarpe","Se perde la spazzola, non raccoglietela."],["L'amico improvvisato","Di solito finisce in un negozio di tappeti."],["Il bar di Taksim","Inviti di sconosciuti: dite no."],["Zafferano a pochi euro","È cartamo."],["Cambio nel bazar","Tassi gonfiati: prelevate in banca."]]],
+ ["Telefono","p",[["Niente roaming","La Turchia non è nell'UE: dati carissimi."],["eSIM turistica","Attivatela prima di partire."],["Mappe offline","Scaricate Istanbul su Google Maps."]]],
+ ["Da local","l",[["Il çay","Accettarlo non obbliga a comprare."],["Cinque parole","Merhaba, teşekkürler, lütfen, hesap, çok güzel."],["I gatti","Sono di tutti, rispettateli."],["L'acqua","Tutti la bevono in bottiglia."],["Prese","Uguali alle nostre: niente adattatore."]]]
+];
+function renderConsigli(body){
+  var seen=load("seenTips")||{};
+  body.innerHTML='<p class="eyebrow">Consigli</p><h2 class="mid ttl">Sei storie da sapere.</h2><p class="soft">Toccate un cerchio. Diventa verde quando l\'avete visto.</p><div class="circles">'+
+   TIPS.map(function(g,gi){var done=(seen[gi]||0)>=g[2].length;return '<button type="button" class="circle'+(done?' seen':'')+'" data-g="'+gi+'"><span class="ring c'+gi+'"><span class="cn">'+(gi+1)+'</span></span><b>'+g[0]+'</b><small>'+g[2].length+' storie</small></button>'}).join("")+'</div>'+
+   '<div class="foot"><button type="button" class="btn wide" data-next>Avanti: prima di partire</button></div>';
+  $(".circles",body).onclick=function(e){var c=e.target.closest(".circle");if(!c)return;var gi=+c.dataset.g,g=TIPS[gi];
+    stories(g[0],g[2].map(function(t){return {h:t[0],t:t[1]}}),{onSeen:function(i){var s=load("seenTips")||{};s[gi]=Math.max(s[gi]||0,i+1);save("seenTips",s)},onClose:function(){renderConsigli(body)}})};
+}
+function partireGroups(){
+  var pam=PAM(),ham=A.p5==="yes",hs=load("hotel"),hn=HOTELS[hs?hs.h:hotelWinner()].name;
+  var bag=[["Giacca impermeabile","10–14 °C e pioggia."],["Scarpe comode","Vicoli in salita."],["Foulard e spalle coperte","Per le moschee."],["Sacchetto per le scarpe","Nelle moschee si portano in mano."],["Power bank","Il telefono si scarica in fretta."]];
+  if(pam)bag.push(["Costume e asciugamano","Per la piscina antica di Pamukkale."]);
+  if(ham)bag.push(["Costume per l'hammam","Il telo lo danno loro."]);
+  bag.push(["Spazio in valigia","30 kg a testa per spezie e teli."]);
+  var book=[["Pacchetto Turkish con "+hn,"Chiedete il letto matrimoniale."],["Cancellazione gratuita","Entro il 13 febbraio 2027."]];
+  if(pam)book.push(["Pamukkale","Voli, transfer e biglietto: vedi la pagina Pamukkale."]);
+  if(ham)book.push(["Hammam","Online, sezione per coppie."]);
+  book.push(["Cene da prenotare","Stellate 2–3 settimane prima, meyhane qualche giorno prima."]);
+  book.push(["Biglietti online","Galata, Pamukkale, Şerefiye."]);
+  return [["Documenti","doc",[["Carta d'identità o passaporto","Niente visto fino a 90 giorni. Controllate viaggiaresicuri.it."],["Assicurazione sanitaria","La tessera europea non vale in Turchia."],["Carta senza commissioni","Più una di riserva."],["Foto dei documenti","Sul telefono e nella posta."]]],["Valigia","bag",bag],["Telefono","tel",[["eSIM turistica","Il roaming UE non vale."],["Google Maps offline","Istanbul scaricata."],["BiTaksi o Uber","Taxi con tassametro."],["App orari preghiera","Per sapere quando entrare."],["Traduttore offline","Turco scaricato."]]],["Da prenotare","book",book]];
+}
+function renderPartire(body){
+  var GR=partireGroups(),done=load("checks")||[],tot=0,ok=0;
+  GR.forEach(function(g){g[2].forEach(function(c){tot++;if(done.indexOf(c[0])>-1)ok++})});
+  body.innerHTML='<p class="eyebrow">Prima di partire</p><h2 class="mid ttl">Cosa vi serve.</h2><div class="pbar"><i style="width:'+(tot?ok/tot*100:0)+'%"></i></div><p class="count">'+ok+' di '+tot+' fatte</p>'+
+   '<div class="bags">'+GR.map(function(g,gi){var n=g[2].filter(function(c){return done.indexOf(c[0])>-1}).length;var pct=g[2].length?n/g[2].length:0;return '<button type="button" class="bagt'+(pct===1?' full':'')+'" data-g="'+gi+'"><svg class="pring" viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><circle class="v" cx="22" cy="22" r="19" style="stroke-dasharray:'+(119.4*pct)+' 119.4"/></svg><b>'+g[0]+'</b><small class="num">'+n+'/'+g[2].length+'</small></button>'}).join("")+'</div>'+
+   '<div class="foot"><button type="button" class="btn wide" data-next>Fine</button></div>';
+  if(ok===tot&&tot)boom(120);
+  $(".bags",body).onclick=function(e){var b=e.target.closest(".bagt");if(!b)return;var g=GR[+b.dataset.g];
+    stories(g[0],g[2].map(function(c){return {h:c[0],t:c[1]}}),{check:{isDone:function(i){return (load("checks")||[]).indexOf(g[2][i][0])>-1},toggle:function(i){var d=load("checks")||[],k=g[2][i][0],p=d.indexOf(k);if(p<0)d.push(k);else d.splice(p,1);save("checks",d)}},onClose:function(){renderPartire(body)}})};
+}
+
+/* =================== PAMUKKALE: nastro e barra dei costi =================== */
+function renderAppendice(body){
+  var cost=[["Voli",160,"var(--iznik)","Turkish andata e ritorno, prenotati presto"],["Taxi",50,"var(--tulip)","Hotel ↔ aeroporto IST"],["Navetta",25,"var(--pistachio)","Aeroporto Denizli → paese, più dolmuş"],["Biglietti",60,"var(--saffron)","30 € a persona, online su muze.gov.tr"],["Pranzo",30,"var(--rose)","Teras Restaurant o simili"]];
+  var tot=cost.reduce(function(a,c){return a+c[1]},0);
+  var tl=[["04:15","car","Taxi per IST"],["06:35","plane","TK2576 per Denizli"],["07:40","pin","Atterraggio"],["08:00","car","Transfer, circa 1 ora"],["09:00","ticket","Porta Sud, Hierapolis"],["11:30","walk","Piscina antica"],["13:00","walk","Scalzi sulle terrazze"],["14:00","fork","Pranzo"],["18:00","car","Verso l'aeroporto"],["21:10","plane","TK2579 per Istanbul"],["23:30","bed","In hotel"]];
+  function trows(list){return '<div class="tbl">'+list.map(function(r){return '<div class="r"><span><b>'+r[0]+'</b>'+(r[1]?'<small>'+r[1]+'</small>':'')+'</span><span class="v">'+r[2]+'</span></div>'}).join("")+'</div>'}
+  body.innerHTML='<p class="eyebrow">Pamukkale · mercoledì 17</p><h2 class="mid ttl">Il giorno volante.</h2>'+
+   '<div class="cheap"><p class="eyebrow">La combinazione più economica</p><div class="big num">'+tot+' €</div><p class="soft" style="opacity:1">in due, tutto compreso</p>'+
+   '<div class="costbar">'+cost.map(function(c){return '<i style="flex:'+c[1]+';background:'+c[2]+'" title="'+c[0]+'"></i>'}).join("")+'</div>'+
+   '<div class="clegend">'+cost.map(function(c){return '<button type="button" class="cl" data-tip="'+esc(c[3])+'"><i style="background:'+c[2]+'"></i>'+c[0]+'<b class="num">'+c[1]+' €</b></button>'}).join("")+'</div><p class="ctip soft" aria-live="polite">Toccate una voce per il dettaglio.</p></div>'+
+   '<h3>La giornata</h3><div class="ptl">'+tl.map(function(r){return '<div class="pt"><span class="ptime num">'+r[0]+'</span><span class="pdot">'+ICO[r[1]]+'</span><span class="plab">'+r[2]+'</span></div>'}).join("")+'</div>'+
+   '<details class="more"><summary>Tutti i voli</summary><div class="inner">'+trows([["TK2576 · IST → Denizli","Consigliato","06:35 → 07:40"],["TK2580 · IST → Denizli","Alcune date cancellate","11:20 → 12:30"],["TK2578 · IST → Denizli","","19:10 → 20:25"],["TK2577 · Denizli → IST","","08:25 → 09:45"],["TK2581 · Denizli → IST","A marzo 2026 alle 21:45","13:15 → 14:35"],["TK2579 · Denizli → IST","Consigliato","21:10 → 22:35"],["AJet · SAW → Denizli","Ritorno serale non confermato","08:10 → 09:15"],["Andata e ritorno a persona","","80–200 €"]])+'</div></details>'+
+   '<details class="more"><summary>Trasferimenti</summary><div class="inner">'+trows([["Taxi Beyazıt → IST","Circa 45 minuti all'alba","35–55 €"],["Havaist HVL-1","Corse rade di notte","426 TL"],["Navetta Denizli + dolmuş","Circa 1 ora e 45","170–225 TL"],["Auto privata","Fino a 3 persone, 1 ora","circa 61 €"],["Tour con ritiro in aeroporto","Pranzo e biglietti inclusi","111–128 $"]])+'</div></details>'+
+   '<details class="more"><summary>Biglietti, orari e porte</summary><div class="inner">'+trows([["Hierapolis, terrazze e museo","Online su muze.gov.tr","30 €"],["Piscina antica","Bordo e bar gratis","circa 15 €"],["Orari a marzo","Da verificare","08:00–17:00"],["Porta Sud","La più comoda",""],["Porta Nord","Pullman e necropoli",""],["Dal paese","Salita scalzi, ripida",""]])+'</div></details>'+
+   '<details class="more"><summary>Pacchetto tutto incluso</summary><div class="inner">'+trows([["Tour in aereo da Istanbul","Voli, guida, transfer, pranzo, biglietti","530–548 $ a persona"]])+'</div></details>'+
+   '<p class="soft">Orari invernali 2026–27 non ancora pubblicati: confermate tutto a febbraio.</p>'+
+   '<div class="foot"><button type="button" class="btn wide" data-next>Avanti: a tavola</button></div>';
+  $(".clegend",body).onclick=function(e){var c=e.target.closest(".cl");if(!c)return;$(".ctip",body).textContent=c.dataset.tip};
+  if(G){gsap.from($$(".costbar i",body),{scaleX:0,transformOrigin:"left",duration:.6,stagger:.08,ease:"power2.out"});gsap.from($$(".pt",body),{x:-16,opacity:0,duration:.3,stagger:.04})}
+}
+R.forEach(function(r){INFO[r[0]]=r[6]+(r[7]?" "+r[7]+".":"")});
+Object.keys(SWEET).forEach(function(k){var w=SWEET[k];if(w)INFO[w[0]]=w[2]});
+INFO["Van Kahvaltı Evi"]="Colazione di Van da condividere, a Cihangir. La domenica c'è fila dalle 10.";
+var RENDER={"duel":renderDuel,"r-hotel":renderHotelResult,"r-giorni":renderGiorni,"r-tavola":renderTavola,"piatti":renderPiatti,"r-botteghe":renderBotteghe,"fine":renderFine,"consigli":renderConsigli,"partire":renderPartire,"appendice":renderAppendice};
+
+/* =================== NAVIGAZIONE =================== */
+var curId="splash";
+function updateBar(){
+  var F=FLOW(),i=F.findIndex(function(s){return s.id===curId}),st=F[i];
+  $("#bar").hidden=curId==="splash"||curId==="grazie";
+  var ch=st.ch||(st.q?Q[st.id].ch:"");$("#barLab").textContent=CH[ch]||"";
+  if(st.q){var list=F.filter(function(s){return s.q&&Q[s.id].ch===Q[st.id].ch});$("#barCnt").textContent=(list.findIndex(function(s){return s.id===st.id})+1)+" di "+list.length}else $("#barCnt").textContent="";
+  $("#barProg").style.width=(i/(F.length-1)*100)+"%";
+}
+function animIn(p){
+  if(!G)return;
+  gsap.fromTo(p,{x:40,opacity:0},{x:0,opacity:1,duration:.45,ease:"power3.out"});
+  var t=$(".ttl",p);
+  if(t&&window.SplitText&&!t._split&&p.dataset.id!=="splash"){t._split=new SplitText(t,{type:"words",wordsClass:"w"})}
+  if(t&&t._split)gsap.from(t._split.words,{yPercent:60,rotate:-6,opacity:0,duration:.6,ease:"back.out(2.2)",stagger:.06,delay:.08});
+  var items=$$(".opt,.chip",p);if(items.length)gsap.from(items,{y:24,opacity:0,duration:.45,ease:"back.out(2)",stagger:.07,delay:.25});
+}
+function goTo(id,push){
+  var p=pageOf(id);if(!p)return;
+  if(RENDER[id])RENDER[id]($("[data-body]",p));
+  $$(".page",app).forEach(function(x){x.hidden=x!==p});
+  curId=id;updateBar();window.scrollTo(0,0);
+  if(push!==false){try{history.pushState({id:id},"")}catch(e){}}
+  animIn(p);
+  if(id==="r-hotel"||id==="fine"||id==="grazie")setTimeout(function(){boom(id==="grazie"?220:id==="fine"?180:130);if(id==="grazie")setTimeout(function(){boom(160,.4)},700)},350);
+  var f=$(".ttl",p);if(f){f.setAttribute("tabindex","-1");try{f.focus({preventScroll:true})}catch(e){}}
+}
+function next(){var F=FLOW(),i=F.findIndex(function(s){return s.id===curId});if(i<F.length-1)goTo(F[i+1].id)}
+window.addEventListener("popstate",function(e){goTo(e.state&&e.state.id?e.state.id:"splash",false)});
+$("#back").addEventListener("click",function(){history.back()});
+
+app.addEventListener("click",function(e){
+  var inf=e.target.closest("[data-info]");if(inf){openSheet(inf.dataset.info,CH[FLOW().filter(function(s){return s.id===curId})[0].ch]||"");return}
+  var n=e.target.closest("[data-next]");if(n){if(curId==="splash")boom(70,.85);next();return}
+  var o=e.target.closest(".opt");
+  if(o){A[o.dataset.q]=o.dataset.v;save("answers",A);syncAnswers();if(G)gsap.fromTo(o,{scale:.94},{scale:1,duration:.35,ease:"back.out(3)"});setTimeout(next,REDUCE?0:380);return}
+  var c=e.target.closest("[data-multi] .chip");
+  if(c){var k=c.parentNode.dataset.multi,arr=A[k]||[],v=c.dataset.v,p=arr.indexOf(v);if(p>-1)arr.splice(p,1);else arr.push(v);A[k]=arr;save("answers",A);syncAnswers();if(G)gsap.fromTo(c,{scale:.9},{scale:1,duration:.3,ease:"back.out(3)"})}
+});
+
+$("#toGuide").onclick=function(){goTo("r-giorni")};
+$("#toStart").onclick=function(){A={};save("answers",A);save("hotel",null);["pick","dishes","shops","swap"].forEach(function(k){save(k,null)});curDay=0;syncAnswers();goTo("splash")};
+syncAnswers();
+try{history.replaceState({id:"splash"},"")}catch(e){}
+goTo("splash",false);
+if(G&&window.SplitText){var sp=new SplitText(".splash h1",{type:"chars",charsClass:"ch"});gsap.from(sp.chars,{yPercent:70,rotate:-14,scale:.6,duration:.9,ease:"back.out(2.4)",stagger:.06})}
+else{var t0=$(".splash h1");t0.innerHTML=t0.textContent.split("").map(function(c){return '<span class="ch">'+c+'</span>'}).join("")}
+})();
+</script>
+
+</body>
+</html>
